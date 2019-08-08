@@ -53,7 +53,8 @@ module.exports = {
     "react/prop-types": 2,
     "react/forbid-prop-types": [2, { forbid: ["any"] }],
     "no-unused-expressions": ["error", { allowTernary: true }],
-    "no-prototype-builtins": 0
+    "no-prototype-builtins": 0,
+    "no-unused-expressions": ["error", { allowShortCircuit: true }]
   },
   globals: {
     __DEV__: true,
