@@ -9,7 +9,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const TabIcon = (props) => {
-  console.log(props);
   const { activeTintColor, focused, iconName, inactiveTintColor } = props;
   return (
     <Icon

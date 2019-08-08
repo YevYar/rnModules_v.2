@@ -12,26 +12,18 @@ import { StatusBar, View } from 'react-native';
 import Admob from '../dataPresentation/Admob/AdmobScreen';
 import CropPicker from '../dataPresentation/CropPicker/CropPickerScreen';
 import FastImage from '../dataPresentation/FastImage/FastImageScreen';
-import ImagePicker from '../dataPresentation/ImagePicker/ImagePickerScreen';
+import ImagePickerHOC from '../dataPresentation/ImagePicker/ImagePickerHOC';
 import TabIcon from '../dataPresentation/commonComponents/TabIcon';
 import Video from '../dataPresentation/Video/VideoScreen';
 import createStyles from './styles/RootNavigator.styles';
-import intoThemeWrapper from '../utils/intoThemeWrapper';
+import wrapIntoTheme from '../utils/intoThemeWrapper';
 
 const RootNavigator = ({ theme }) => {
   const { accentColor, inactiveIcon, primaryColor } = theme.palette;
-  const {
-    admobNavigationBarStyle,
-    cropPickerNavigationBarStyle,
-    fastImageNavigationBarStyle,
-    imagePickerNavigationBarStyle,
-    videoNavigationBarStyle,
-    screen,
-    title
-  } = createStyles(theme.palette);
+  const styles = createStyles(theme.palette);
 
   return (
-    <View style={screen}>
+    <View style={styles.screen}>
       <StatusBar backgroundColor={primaryColor} />
       <Router>
         <Tabs
@@ -40,15 +32,15 @@ const RootNavigator = ({ theme }) => {
           activeTintColor={primaryColor}
           inactiveTintColor={inactiveIcon}
           labelStyle={{ color: primaryColor }}
-          titleStyle={title}
+          titleStyle={styles.title}
         >
           <Scene
             key="imagePicker"
             title="Image picker"
-            component={ImagePicker}
+            component={ImagePickerHOC}
             icon={TabIcon}
             iconName="image"
-            navigationBarStyle={imagePickerNavigationBarStyle}
+            navigationBarStyle={styles.imagePickerNavigationBarStyle}
             activeTintColor={primaryColor}
             inactiveTintColor={inactiveIcon}
           />
@@ -58,7 +50,7 @@ const RootNavigator = ({ theme }) => {
             component={Admob}
             icon={TabIcon}
             iconName="announcement"
-            navigationBarStyle={admobNavigationBarStyle}
+            navigationBarStyle={styles.admobNavigationBarStyle}
           />
           <Scene
             key="video"
@@ -66,7 +58,7 @@ const RootNavigator = ({ theme }) => {
             component={Video}
             icon={TabIcon}
             iconName="video-label"
-            navigationBarStyle={videoNavigationBarStyle}
+            navigationBarStyle={styles.videoNavigationBarStyle}
           />
           <Scene
             key="cropPicker"
@@ -74,7 +66,7 @@ const RootNavigator = ({ theme }) => {
             component={CropPicker}
             icon={TabIcon}
             iconName="crop"
-            navigationBarStyle={cropPickerNavigationBarStyle}
+            navigationBarStyle={styles.cropPickerNavigationBarStyle}
           />
           <Scene
             key="fastImage"
@@ -82,7 +74,7 @@ const RootNavigator = ({ theme }) => {
             component={FastImage}
             icon={TabIcon}
             iconName="collections"
-            navigationBarStyle={fastImageNavigationBarStyle}
+            navigationBarStyle={styles.fastImageNavigationBarStyle}
           />
         </Tabs>
       </Router>
@@ -92,4 +84,4 @@ const RootNavigator = ({ theme }) => {
 
 RootNavigator.propTypes = { theme: PropTypes.object.isRequired };
 
-export default intoThemeWrapper(RootNavigator);
+export default wrapIntoTheme(RootNavigator);
