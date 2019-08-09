@@ -5,9 +5,18 @@
  */
 
 import React from 'react';
+import { Actions } from 'react-native-router-flux';
 
 import ImagePickerScreen from './ImagePickerScreen';
 
-/* Screen requires chosenPhoto, navigation, navigationBarStyle, photoHasBeenChosen, photoHasBeenTaken,
+const onImagePress = images => i =>
+  Actions.imagesView({
+    images,
+    imageIndex: i
+  });
+
+/* Screen requires chosenPhoto, navigation, navigationBarStyle, onImagePress, photoHasBeenChosen, photoHasBeenTaken,
  takenPhoto, theme */
-export default props => <ImagePickerScreen {...props} />;
+export default props => (
+  <ImagePickerScreen {...props} onImagePress={onImagePress} />
+);

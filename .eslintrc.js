@@ -52,9 +52,11 @@ module.exports = {
     "object-curly-newline": ["error", { multiline: true }],
     "react/prop-types": 2,
     "react/forbid-prop-types": [2, { forbid: ["any"] }],
-    "no-unused-expressions": ["error", { allowTernary: true }],
     "no-prototype-builtins": 0,
-    "no-unused-expressions": ["error", { allowShortCircuit: true }]
+    "no-unused-expressions": [
+      "error",
+      { allowTernary: true, allowShortCircuit: true }
+    ]
   },
   globals: {
     __DEV__: true,

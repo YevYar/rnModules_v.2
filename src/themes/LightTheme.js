@@ -18,9 +18,12 @@ export default {
     alternateTextColor: '#FFF',
     // backgournds and borders
     canvasColor: '#FFF',
-    borderColor: 'rgba(0, 0, 0, 0.12)',
+    borderColor: 'rgba(0, 0, 0, 0.4)',
+    accentBorderColor: 'rgba(225, 52, 30, 0.4)',
+    imagePreviewColor: '#000',
+    imagePreviewBackColor: '#FFF',
     // https://material.google.com/style/color.html#color-text-background-colors
-    disabledColor: 'rgba(0, 0, 0, 0.38)',
+    disabledColor: 'rgba(0, 0, 0, 0.15)',
     disabledTextColor: 'rgba(0, 0, 0, 0.26)',
     activeIcon: 'rgba(0, 0, 0, 0.54)',
     inactiveIcon: 'rgba(0, 0, 0, 0.18)'

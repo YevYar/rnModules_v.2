@@ -10,6 +10,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-native-material-ui';
 import { Platform, StatusBar, View } from 'react-native';
 
+import Gallery from '../commonComponents/Gallery';
 import createStyles from './ImagePicker.styles';
 import intoThemeWrapper from '../../utils/intoThemeWrapper';
 
@@ -32,6 +33,7 @@ class ImagePickerScreen extends Component {
     chosenPhotos: PropTypes.array.isRequired,
     navigation: PropTypes.object.isRequired,
     navigationBarStyle: PropTypes.object.isRequired,
+    onImagePress: PropTypes.func.isRequired,
     photoHasBeenChosen: PropTypes.func.isRequired,
     photoHasBeenTaken: PropTypes.func.isRequired,
     takenPhotos: PropTypes.array.isRequired,
@@ -40,6 +42,7 @@ class ImagePickerScreen extends Component {
 
   constructor(props) {
     super(props);
+
     this.showImagePicker = this.showImagePicker.bind(this);
     this.launchCamera = this.launchCamera.bind(this);
     this.launchImageLibrary = this.launchImageLibrary.bind(this);
@@ -67,22 +70,13 @@ class ImagePickerScreen extends Component {
 
   launchImageLibrary() {
     ImagePicker.launchImageLibrary(options, (response) => {
-      console.log('Response = ', response);
+      // console.log('Response = ', response);
       this.props.photoHasBeenChosen(response.uri);
     });
   }
 
   showImagePicker() {
     ImagePicker.showImagePicker(options, (response) => {
-      /* if (response.didCancel) {
-        console.log('User cancelled image picker');
-      } else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
-      } else if (response.customButton) {
-        console.log('User tapped custom button: ', response.customButton);
-      } else {
-        console.log(response.uri);
-      } */
       switch (response.customButton) {
         case 'choose':
           this.launchImageLibrary();
@@ -99,17 +93,25 @@ class ImagePickerScreen extends Component {
   }
 
   render() {
-    // console.log(this.props);
-    const { theme } = this.props;
+    const { chosenPhotos, onImagePress, takenPhotos, theme } = this.props;
     const styles = createStyles(theme.palette);
 
     return (
       <View style={styles.screen}>
         <Button
           text="Let's get a photo"
-          primary
+          accent
           raised
           onPress={this.showImagePicker}
+          style={{ container: styles.letButton }}
+        />
+        <Gallery
+          images={chosenPhotos}
+          onImagePress={onImagePress(chosenPhotos)}
+        />
+        <Gallery
+          images={takenPhotos}
+          onImagePress={onImagePress(takenPhotos)}
         />
       </View>
     );
