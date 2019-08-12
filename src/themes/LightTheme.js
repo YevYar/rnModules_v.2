@@ -21,6 +21,7 @@ export default {
     borderColor: 'rgba(0, 0, 0, 0.4)',
     accentBorderColor: 'rgba(225, 52, 30, 0.4)',
     imagePreviewColor: '#000',
+    imagePreviewColorHeader: 'rgba(0, 0, 0, 0.55)',
     imagePreviewBackColor: '#FFF',
     // https://material.google.com/style/color.html#color-text-background-colors
     disabledColor: 'rgba(0, 0, 0, 0.15)',

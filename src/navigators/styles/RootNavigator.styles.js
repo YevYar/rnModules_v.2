@@ -14,7 +14,6 @@ const createStyles = (palette) => {
     additionalColor_2,
     additionalColor_3,
     alternateTextColor,
-    imagePreviewColor,
     primaryColor
   } = palette;
   return StyleSheet.create({
@@ -22,7 +21,6 @@ const createStyles = (palette) => {
     cropPickerNavigationBarStyle: { backgroundColor: additionalColor },
     fastImageNavigationBarStyle: { backgroundColor: additionalColor_2 },
     imagePickerNavigationBarStyle: { backgroundColor: primaryColor },
-    imagesViewNavigationBarStyle: { backgroundColor: imagePreviewColor },
     videoNavigationBarStyle: { backgroundColor: additionalColor_3 },
     screen: { flex: 1 },
     title: { color: alternateTextColor }

@@ -6,7 +6,7 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Modal, Router, Scene, Tabs } from 'react-native-router-flux';
+import { Lightbox, Modal, Router, Scene, Tabs } from 'react-native-router-flux';
 import { StatusBar, View } from 'react-native';
 
 import Admob from '../dataPresentation/Admob/AdmobScreen';
@@ -20,12 +20,7 @@ import createStyles from './styles/RootNavigator.styles';
 import wrapIntoTheme from '../utils/intoThemeWrapper';
 
 const RootNavigator = ({ theme }) => {
-  const {
-    accentColor,
-    inactiveIcon,
-    imagePreviewBackColor,
-    primaryColor
-  } = theme.palette;
+  const { accentColor, inactiveIcon, primaryColor } = theme.palette;
   const styles = createStyles(theme.palette);
 
   return (
@@ -90,9 +85,7 @@ const RootNavigator = ({ theme }) => {
             key="imagesView"
             title=""
             component={ModalImageViewer}
-            back
-            backButtonTintColor={imagePreviewBackColor}
-            navigationBarStyle={styles.imagesViewNavigationBarStyle}
+            hideNavBar
           />
         </Modal>
       </Router>

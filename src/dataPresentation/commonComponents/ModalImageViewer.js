@@ -7,9 +7,9 @@
 import ImageViewer from 'react-native-image-zoom-viewer';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { Platform, StatusBar, View } from 'react-native';
-
 import { Actions } from 'react-native-router-flux';
+import { Button } from 'react-native-material-ui';
+import { StatusBar, SafeAreaView, Text, View } from 'react-native';
 
 import createStyles from './styles/ModalImageViewer.styles';
 import intoThemeWrapper from '../../utils/intoThemeWrapper';
@@ -18,44 +18,67 @@ class ModalImageViewer extends Component {
   static propTypes = {
     images: PropTypes.array.isRequired,
     imageIndex: PropTypes.number.isRequired,
-    navigation: PropTypes.object.isRequired,
-    navigationBarStyle: PropTypes.object.isRequired,
     theme: PropTypes.object.isRequired
   };
 
-  /* componentDidMount() {
-    const { navigation, navigationBarStyle } = this.props;
-    this._navListener = navigation.addListener('didFocus', () => {
-      StatusBar.setBarStyle('light-content');
-      Platform.OS === 'android' &&
-        StatusBar.setBackgroundColor(navigationBarStyle.backgroundColor);
-    });
+  state = { currentIndex: -1, isHeaderVisible: true };
+
+  changeHeaderVisibility() {
+    this.setState(prevState => ({isHeaderVisible: !prevState.isHeaderVisible}));
   }
 
-  componentWillUnmount() {
-    this._navListener.remove();
-  } */
-
   render() {
-    const { images } = this.props;
+    console.log(this.props);
+    const { images, imageIndex } = this.props;
     const { palette } = this.props.theme;
 
     const imagesUrl = images.map(item => ({ url: item }));
 
     const styles = createStyles(palette);
     return (
-      <View style={styles.screen}>
-        <StatusBar backgroundColor={palette.imagePreviewColor} />
+      <SafeAreaView style={styles.screen}>
+        <StatusBar
+          backgroundColor="transparent"
+          translucent
+          hidden={!this.state.isHeaderVisible}
+        />
+        {this.state.isHeaderVisible && (
+          <View style={styles.navBar}>
+            <Button
+              icon="arrow-back"
+              text=""
+              onPress={() => {
+                Actions.pop();
+              }}
+              style={{ text: styles.arrowBack }}
+            />
+            <Text style={styles.title}>
+              {`${
+                this.state.currentIndex === -1
+                  ? imageIndex + 1
+                  : this.state.currentIndex + 1
+              }/${images.length}`}
+            </Text>
+          </View>
+        )}
         <ImageViewer
           imageUrls={imagesUrl}
           enableSwipeDown
           onSwipeDown={() => {
             Actions.pop();
           }}
-          index={this.props.imageIndex}
+          index={
+            this.state.currentIndex === -1
+              ? imageIndex
+              : this.state.currentIndex
+          }
           backgroundColor="transparent"
+          renderIndicator={() => null}
+          style={styles.imgViewer}
+          onChange={index => this.setState({ currentIndex: index })}
+          onClick={() => this.changeHeaderVisibility()}
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }

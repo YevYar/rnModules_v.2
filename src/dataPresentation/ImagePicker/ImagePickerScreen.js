@@ -8,7 +8,7 @@ import ImagePicker from 'react-native-image-picker';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Button } from 'react-native-material-ui';
-import { Platform, StatusBar, View } from 'react-native';
+import { Platform, StatusBar, Text, View } from 'react-native';
 
 import Gallery from '../commonComponents/Gallery';
 import createStyles from './ImagePicker.styles';
@@ -63,15 +63,13 @@ class ImagePickerScreen extends Component {
 
   launchCamera() {
     ImagePicker.launchCamera(options, (response) => {
-      console.log('Response = ', response);
-      this.props.photoHasBeenTaken(response.uri);
+      if (!response.didCancel) this.props.photoHasBeenTaken(response.uri);
     });
   }
 
   launchImageLibrary() {
     ImagePicker.launchImageLibrary(options, (response) => {
-      // console.log('Response = ', response);
-      this.props.photoHasBeenChosen(response.uri);
+      if (!response.didCancel) this.props.photoHasBeenChosen(response.uri);
     });
   }
 
@@ -105,14 +103,24 @@ class ImagePickerScreen extends Component {
           onPress={this.showImagePicker}
           style={{ container: styles.letButton }}
         />
-        <Gallery
-          images={chosenPhotos}
-          onImagePress={onImagePress(chosenPhotos)}
-        />
-        <Gallery
-          images={takenPhotos}
-          onImagePress={onImagePress(takenPhotos)}
-        />
+        {chosenPhotos.length > 0 && (
+          <View style={styles.gridView}>
+            <Text style={styles.text}>Chosen photos</Text>
+            <Gallery
+              images={chosenPhotos}
+              onImagePress={onImagePress(chosenPhotos)}
+            />
+          </View>
+        )}
+        {takenPhotos.length > 0 && (
+          <View style={styles.gridView}>
+            <Text style={styles.text}>Taken photos</Text>
+            <Gallery
+              images={takenPhotos}
+              onImagePress={onImagePress(takenPhotos)}
+            />
+          </View>
+        )}
       </View>
     );
   }

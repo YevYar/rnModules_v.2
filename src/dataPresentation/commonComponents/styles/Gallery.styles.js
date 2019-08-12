@@ -9,10 +9,9 @@ import { StyleSheet } from 'react-native';
 
 const createStyles = (palette) => {
   const { accentBorderColor, borderColor, disabledColor } = palette;
+
   return StyleSheet.create({
     grid: {
-      borderColor: 'red',
-      // borderWidth: 2,
       flex: 1,
       marginTop: 10,
       overflow: 'visible'
@@ -23,7 +22,6 @@ const createStyles = (palette) => {
       flex: 1
     },
     imagePreviewContainer: {
-      // flex: 1,
       height: 100,
       margin: 1,
       width: '24.5%'
@@ -33,7 +31,6 @@ const createStyles = (palette) => {
       backgroundColor: disabledColor,
       borderColor: accentBorderColor,
       borderWidth: 2,
-      // flex: 1,
       flexDirection: 'column',
       height: 100,
       justifyContent: 'center',
