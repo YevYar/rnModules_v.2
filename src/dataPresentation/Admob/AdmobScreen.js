@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Platform, StatusBar, View } from 'react-native';
 
-export default class Admob extends Component {
+export default class AdmobScreen extends Component {
   static propTypes = {
     navigation: PropTypes.object.isRequired,
     navigationBarStyle: PropTypes.object.isRequired

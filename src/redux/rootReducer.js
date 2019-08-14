@@ -6,6 +6,6 @@
 
 import { combineReducers } from 'redux';
 
-import imagePickerReducer from './imagePicker/imagePickerReducer';
+import cropPickerReducer from './cropPicker/cropPickerReducer';
 
-export default combineReducers({ imagePickerState: imagePickerReducer });
+export default combineReducers({ cropPickerState: cropPickerReducer });

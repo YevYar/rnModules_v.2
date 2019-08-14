@@ -8,7 +8,12 @@ import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 
 const createStyles = (palette) => {
-  const { accentBorderColor, borderColor, disabledColor } = palette;
+  const {
+    accentBorderColor,
+    borderColor,
+    disabledColor,
+    mediaPreviewColor
+  } = palette;
 
   return StyleSheet.create({
     grid: {
@@ -16,17 +21,18 @@ const createStyles = (palette) => {
       marginTop: 10,
       overflow: 'visible'
     },
-    imagePreview: {
+    mediaPreview: {
+      backgroundColor: mediaPreviewColor,
       borderColor,
       borderWidth: 2,
       flex: 1
     },
-    imagePreviewContainer: {
+    mediaPreviewContainer: {
       height: 100,
       margin: 1,
       width: '24.5%'
     },
-    emptyImagePreview: {
+    emptyMediaPreview: {
       alignItems: 'center',
       backgroundColor: disabledColor,
       borderColor: accentBorderColor,

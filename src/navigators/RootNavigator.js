@@ -10,12 +10,11 @@ import { Lightbox, Modal, Router, Scene, Tabs } from 'react-native-router-flux';
 import { StatusBar, View } from 'react-native';
 
 import Admob from '../dataPresentation/Admob/AdmobScreen';
-import CropPicker from '../dataPresentation/CropPicker/CropPickerScreen';
+import CropPickerHOC from '../dataPresentation/CropPicker/CropPickerHOC';
 import FastImage from '../dataPresentation/FastImage/FastImageScreen';
-import ImagePickerHOC from '../dataPresentation/ImagePicker/ImagePickerHOC';
-import ModalImageViewer from '../dataPresentation/commonComponents/ModalImageViewer';
+import ModalImageViewer from '../dataPresentation/commonComponents/ModalMediaViewer';
 import TabIcon from '../dataPresentation/commonComponents/TabIcon';
-import Video from '../dataPresentation/Video/VideoScreen';
+import VideoContainer from '../dataPresentation/Video/VideoContainer';
 import createStyles from './styles/RootNavigator.styles';
 import wrapIntoTheme from '../utils/intoThemeWrapper';
 
@@ -38,14 +37,12 @@ const RootNavigator = ({ theme }) => {
             hideNavBar
           >
             <Scene
-              key="imagePicker"
-              title="Image picker"
-              component={ImagePickerHOC}
+              key="cropPicker"
+              title="Crop picker"
+              component={CropPickerHOC}
               icon={TabIcon}
-              iconName="image"
-              navigationBarStyle={styles.imagePickerNavigationBarStyle}
-              activeTintColor={primaryColor}
-              inactiveTintColor={inactiveIcon}
+              iconName="crop"
+              navigationBarStyle={styles.cropPickerNavigationBarStyle}
             />
             <Scene
               key="admob"
@@ -58,18 +55,10 @@ const RootNavigator = ({ theme }) => {
             <Scene
               key="video"
               title="Video"
-              component={Video}
+              component={VideoContainer}
               icon={TabIcon}
               iconName="video-label"
               navigationBarStyle={styles.videoNavigationBarStyle}
-            />
-            <Scene
-              key="cropPicker"
-              title="Crop picker"
-              component={CropPicker}
-              icon={TabIcon}
-              iconName="crop"
-              navigationBarStyle={styles.cropPickerNavigationBarStyle}
             />
             <Scene
               key="fastImage"
@@ -82,7 +71,7 @@ const RootNavigator = ({ theme }) => {
           </Tabs>
 
           <Scene
-            key="imagesView"
+            key="mediaView"
             title=""
             component={ModalImageViewer}
             hideNavBar

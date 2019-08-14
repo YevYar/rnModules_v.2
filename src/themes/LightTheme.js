@@ -20,9 +20,9 @@ export default {
     canvasColor: '#FFF',
     borderColor: 'rgba(0, 0, 0, 0.4)',
     accentBorderColor: 'rgba(225, 52, 30, 0.4)',
-    imagePreviewColor: '#000',
-    imagePreviewColorHeader: 'rgba(0, 0, 0, 0.55)',
-    imagePreviewBackColor: '#FFF',
+    mediaPreviewColor: '#000',
+    mediaPreviewColorHeader: 'rgba(0, 0, 0, 0.55)',
+    mediaPreviewBackColor: '#FFF',
     // https://material.google.com/style/color.html#color-text-background-colors
     disabledColor: 'rgba(0, 0, 0, 0.15)',
     disabledTextColor: 'rgba(0, 0, 0, 0.26)',

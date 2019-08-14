@@ -10,7 +10,6 @@ import { StyleSheet } from 'react-native';
 const createStyles = (palette) => {
   const {
     accentColor,
-    additionalColor,
     additionalColor_2,
     additionalColor_3,
     alternateTextColor,
@@ -18,9 +17,8 @@ const createStyles = (palette) => {
   } = palette;
   return StyleSheet.create({
     admobNavigationBarStyle: { backgroundColor: accentColor },
-    cropPickerNavigationBarStyle: { backgroundColor: additionalColor },
+    cropPickerNavigationBarStyle: { backgroundColor: primaryColor },
     fastImageNavigationBarStyle: { backgroundColor: additionalColor_2 },
-    imagePickerNavigationBarStyle: { backgroundColor: primaryColor },
     videoNavigationBarStyle: { backgroundColor: additionalColor_3 },
     screen: { flex: 1 },
     title: { color: alternateTextColor }

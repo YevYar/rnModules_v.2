@@ -10,7 +10,7 @@ import createSagaMiddleware from 'redux-saga';
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
 
-const initState = { imagePickerState: { domainData: { chosenPhotos: [], takenPhotos: [] } } };
+const initState = {cropPickerState: { domainData: { chosenMedia: [], takenMedia: [] } }};
 
 const saga = createSagaMiddleware();
 

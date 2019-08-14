@@ -9,17 +9,18 @@ import { StyleSheet } from 'react-native';
 
 const createStyles = (palette) => {
   const {
-    imagePreviewBackColor,
-    imagePreviewColor,
-    imagePreviewColorHeader
+    mediaPreviewBackColor,
+    mediaPreviewColor,
+    mediaPreviewColorHeader
   } = palette;
 
   return StyleSheet.create({
-    arrowBack: { color: imagePreviewBackColor },
+    arrowBack: { color: mediaPreviewBackColor },
+    image: { flex: 1, borderWidth: 2, borderColor: 'red' },
     imgViewer: { flex: 1 },
     navBar: {
       alignItems: 'flex-start',
-      backgroundColor: imagePreviewColorHeader,
+      backgroundColor: mediaPreviewColorHeader,
       bottom: 0,
       height: 80,
       left: 0,
@@ -30,14 +31,14 @@ const createStyles = (palette) => {
       zIndex: 1
     },
     screen: {
-      backgroundColor: imagePreviewColor,
+      backgroundColor: mediaPreviewColor,
       flex: 1,
       flexDirection: 'column',
       justifyContent: 'flex-start'
     },
     title: {
       alignSelf: 'center',
-      color: imagePreviewBackColor,
+      color: mediaPreviewBackColor,
       fontSize: 17,
       marginTop: -28
     }
