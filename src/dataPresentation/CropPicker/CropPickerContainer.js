@@ -4,10 +4,10 @@
  * @format
  */
 
-import React from 'react';
-import { Actions } from 'react-native-router-flux';
+import React from "react";
+import { Actions } from "react-native-router-flux";
 
-import CropPickerScreen from './CropPickerScreen';
+import CropPickerScreen from "./CropPickerScreen";
 
 const bufferConfig = {
   minBufferMs: 15000,
@@ -23,7 +23,7 @@ const onMediaPress = mediaArray => i =>
   });
 
 /* Screen requires bufferConfig, chosenPhoto, navigation, navigationBarStyle, onMediaPress, mediaHasBeenTaken, mediaHaveBeenChosen,
- takenPhoto, theme */
+ takenPhoto */
 export default props => (
   <CropPickerScreen
     {...props}

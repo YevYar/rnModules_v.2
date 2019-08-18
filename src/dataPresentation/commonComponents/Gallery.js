@@ -4,15 +4,15 @@
  * @format
  */
 
-import Grid from 'react-native-grid-component';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import Video from 'react-native-video';
-import { Image, TouchableOpacity, View } from 'react-native';
+import Grid from "react-native-grid-component";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import Video from "react-native-video";
+import { Image, TouchableOpacity, View } from "react-native";
 
-import createStyles from './styles/Gallery.styles';
-import intoThemeWrapper from '../../utils/intoThemeWrapper';
+import createStyles from "./styles/Gallery.styles";
+import intoThemeWrapper from "../../utils/intoThemeWrapper";
 
 class Gallery extends Component {
   static propTypes = {
@@ -32,12 +32,13 @@ class Gallery extends Component {
 
   _renderItem(data, i) {
     console.log(data);
+    const { onMediaPress, theme } = this.props;
     return data.uri ? (
       <TouchableOpacity
-        onPress={() => this.props.onMediaPress(i)}
+        onPress={() => onMediaPress(i)}
         style={this.styles.mediaPreviewContainer}
       >
-        {data.mime.includes('image') ? (
+        {data.mime.includes("image") ? (
           <Image source={{ uri: data.uri }} style={this.styles.mediaPreview} />
         ) : (
           <Video
@@ -48,7 +49,7 @@ class Gallery extends Component {
               "http://www.archive.org/download/MickeyMouse-RunawayTrain/Film-42.mp4"
           } */
             } // Can be a URL or a local file.
-            ref={(ref) => {
+            ref={ref => {
               this.player = ref;
             }} // Store reference
             style={this.styles.mediaPreview}
@@ -66,11 +67,7 @@ class Gallery extends Component {
       </TouchableOpacity>
     ) : (
       <View style={this.styles.emptyMediaPreview}>
-        <Icon
-          name="broken-image"
-          color={this.props.theme.palette.accentColor}
-          size={60}
-        />
+        <Icon name="broken-image" color={theme.palette.accentColor} size={60} />
       </View>
     );
   }

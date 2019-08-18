@@ -4,16 +4,18 @@
  * @format
  */
 
-import CropPicker from 'react-native-image-crop-picker';
-import ImagePicker from 'react-native-image-picker';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Button } from 'react-native-material-ui';
-import { Platform, StatusBar, Text, View } from 'react-native';
+import CropPicker from "react-native-image-crop-picker";
+import ImagePicker from "react-native-image-picker";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { Button } from "react-native-material-ui";
+import { Platform, StatusBar, Text, View } from "react-native";
 
-import Gallery from '../commonComponents/Gallery';
-import createStyles from './CropPicker.styles';
-import intoThemeWrapper from '../../utils/intoThemeWrapper';
+import { Actions } from "react-native-router-flux";
+
+import Gallery from "../commonComponents/Gallery";
+import createStyles from "./CropPicker.styles";
+import intoThemeWrapper from "../../utils/intoThemeWrapper";
 
 const cropMenuOptions = {
   /**
@@ -25,21 +27,21 @@ const cropMenuOptions = {
    *  t - take
    *  v - video
    */
-  chooseFromLibraryButtonTitle: '',
+  chooseFromLibraryButtonTitle: "",
   customButtons: [
-    { name: 'sme', title: 'Choose a media' },
-    { name: 'sc', title: 'Choose an image with cropping' },
-    { name: 'smme', title: 'Choose a few media' },
-    { name: 'tp', title: 'Take a photo' },
-    { name: 'tc', title: 'Take a photo with cropping' },
-    { name: 'tv', title: 'Take a video' }
+    { name: "sme", title: "Choose a media" },
+    { name: "sc", title: "Choose an image with cropping" },
+    { name: "smme", title: "Choose a few media" },
+    { name: "tp", title: "Take a photo" },
+    { name: "tc", title: "Take a photo with cropping" },
+    { name: "tv", title: "Take a video" }
   ],
   storageOptions: {
     skipBackup: true,
-    path: 'images'
+    path: "images"
   },
-  takePhotoButtonTitle: '',
-  title: 'Select media'
+  takePhotoButtonTitle: "",
+  title: "Select media"
 };
 
 const generalRequestObject = {
@@ -73,9 +75,9 @@ class CropPickerScreen extends Component {
 
   componentDidMount() {
     const { navigation, navigationBarStyle } = this.props;
-    this._navListener = navigation.addListener('didFocus', () => {
-      StatusBar.setBarStyle('light-content');
-      Platform.OS === 'android' &&
+    this._navListener = navigation.addListener("didFocus", () => {
+      StatusBar.setBarStyle("light-content");
+      Platform.OS === "android" &&
         StatusBar.setBackgroundColor(navigationBarStyle.backgroundColor);
     });
     generalRequestObject.cropperActiveWidgetColor =
@@ -92,7 +94,7 @@ class CropPickerScreen extends Component {
 
   launchCamera(options) {
     CropPicker.openCamera({ ...generalRequestObject, ...options })
-      .then((response) => {
+      .then(response => {
         console.log(response);
         this.props.mediaHasBeenTaken({
           mime: response.mime,
@@ -104,50 +106,52 @@ class CropPickerScreen extends Component {
 
   launchImageLibrary(options) {
     CropPicker.openPicker({ ...generalRequestObject, ...options })
-      .then((response) => {
+      .then(response => {
         console.log(response);
-        this.props.mediaHaveBeenChosen(Array.isArray(response)
+        this.props.mediaHaveBeenChosen(
+          Array.isArray(response)
             ? response.map(item => ({ mime: item.mime, path: item.path }))
-            : [{ mime: response.mime, path: response.path }]);
+            : [{ mime: response.mime, path: response.path }]
+        );
       })
       .catch(error => console.log(error));
   }
 
   showCropPickerMenu() {
-    ImagePicker.showImagePicker(cropMenuOptions, (response) => {
+    ImagePicker.showImagePicker(cropMenuOptions, response => {
       switch (response.customButton) {
-        case 'sc':
+        case "sc":
           this.launchImageLibrary({
             cropping: true,
             height: 400,
-            mediaType: 'photo',
+            mediaType: "photo",
             width: 300
           });
           break;
 
-        case 'sme':
+        case "sme":
           this.launchImageLibrary();
           break;
 
-        case 'smme':
+        case "smme":
           this.launchImageLibrary({ multiple: true });
           break;
 
-        case 'tc':
+        case "tc":
           this.launchCamera({
             cropping: true,
             height: 400,
-            mediaType: 'photo',
+            mediaType: "photo",
             width: 300
           });
           break;
 
-        case 'tp':
-          this.launchCamera({ mediaType: 'photo' });
+        case "tp":
+          this.launchCamera({ mediaType: "photo" });
           break;
 
-        case 'tv':
-          this.launchCamera({ mediaType: 'video' });
+        case "tv":
+          this.launchCamera({ mediaType: "video" });
           break;
 
         default:

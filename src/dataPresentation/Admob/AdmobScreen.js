@@ -4,9 +4,9 @@
  * @format
  */
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Platform, StatusBar, View } from 'react-native';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Platform, StatusBar, View } from "react-native";
 
 export default class AdmobScreen extends Component {
   static propTypes = {
@@ -16,9 +16,9 @@ export default class AdmobScreen extends Component {
 
   componentDidMount() {
     const { navigation, navigationBarStyle } = this.props;
-    this._navListener = navigation.addListener('didFocus', () => {
-      StatusBar.setBarStyle('light-content');
-      Platform.OS === 'android' &&
+    this._navListener = navigation.addListener("didFocus", () => {
+      StatusBar.setBarStyle("light-content");
+      Platform.OS === "android" &&
         StatusBar.setBackgroundColor(navigationBarStyle.backgroundColor);
     });
   }

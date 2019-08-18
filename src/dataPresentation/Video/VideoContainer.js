@@ -4,10 +4,10 @@
  * @format
  */
 
-import React from 'react';
-import { Actions } from 'react-native-router-flux';
+import React from "react";
+import { Actions } from "react-native-router-flux";
 
-import VideoScreen from './VideoScreen';
+import VideoScreen from "./VideoScreen";
 
 const onImagePress = images => i =>
   Actions.imagesView({
@@ -22,5 +22,5 @@ const bufferConfig = {
   bufferForPlaybackAfterRebufferMs: 3000
 };
 
-/* Screen requires bufferConfig, theme */
+/* Screen requires bufferConfig */
 export default props => <VideoScreen {...props} bufferConfig={bufferConfig} />;

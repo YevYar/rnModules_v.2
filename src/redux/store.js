@@ -4,13 +4,16 @@
  * @format
  */
 
-import { applyMiddleware, createStore } from 'redux';
-import createSagaMiddleware from 'redux-saga';
+import { applyMiddleware, createStore } from "redux";
+import createSagaMiddleware from "redux-saga";
 
-import rootReducer from './rootReducer';
-import rootSaga from './rootSaga';
+import rootReducer from "./rootReducer";
+import rootSaga from "./rootSaga";
 
-const initState = {cropPickerState: { domainData: { chosenMedia: [], takenMedia: [] } }};
+const initState = {
+  appState: { language: "en" },
+  cropPickerState: { domainData: { chosenMedia: [], takenMedia: [] } }
+};
 
 const saga = createSagaMiddleware();
 
