@@ -4,29 +4,45 @@
  * @format
  */
 
-import PropTypes from "prop-types";
-import { StyleSheet } from "react-native";
+import PropTypes from 'prop-types';
+import { StyleSheet } from 'react-native';
 
-const createStyles = palette => {
-  const { canvasColor, lightboxTransparencyColor } = palette;
+const createStyles = (palette) => {
+  const {
+    canvasColor,
+    lightboxTransparencyColor,
+    navigationElementsColor
+  } = palette;
 
   return StyleSheet.create({
+    arrowBack: { color: navigationElementsColor },
+    bottomButtons: {
+      bottom: 0,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      position: 'absolute',
+      width: '100%'
+    },
     box: {
       backgroundColor: canvasColor,
       height: 200,
-      width: "70%"
+      width: '70%'
+    },
+    languagePicker: {
+      height: 50,
+      width: '100%'
     },
     screen: {
-      alignItems: "center",
+      alignItems: 'center',
       backgroundColor: lightboxTransparencyColor,
       bottom: 0,
-      height: "100%",
-      justifyContent: "center",
+      height: '100%',
+      justifyContent: 'center',
       left: 0,
-      position: "absolute",
+      position: 'absolute',
       right: 0,
       top: 0,
-      width: "100%"
+      width: '100%'
     }
   });
 };

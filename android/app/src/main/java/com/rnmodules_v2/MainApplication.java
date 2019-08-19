@@ -13,6 +13,8 @@ import com.facebook.soloader.SoLoader;
 
 import java.util.List;
 
+import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {

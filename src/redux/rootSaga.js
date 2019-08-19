@@ -4,7 +4,7 @@
  * @format
  */
 
-import { takeEvery } from 'redux-saga';
+import { takeEvery } from 'redux-saga/effects';
 
 /** *********
  * ACTIONS  *

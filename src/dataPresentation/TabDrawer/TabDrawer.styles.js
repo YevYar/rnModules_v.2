@@ -4,8 +4,8 @@
  * @format
  */
 
-import PropTypes from "prop-types";
-import { StyleSheet } from "react-native";
+import PropTypes from 'prop-types';
+import { StyleSheet } from 'react-native';
 
 const createStyles = (palette, tabColor) => {
   const { tabDrawerIconsTextColor, tabDrawerTransparencyColor } = palette;
@@ -31,15 +31,15 @@ const createStyles = (palette, tabColor) => {
     },
     loginButtonText: {
       color: tabDrawerIconsTextColor,
-      fontFamily: "Arial",
+      fontFamily: 'Arial',
       fontSize: 16
     },
     loginButtonsContainer: {
       backgroundColor: tabDrawerIconsTextColor,
       marginTop: -10,
       paddingBottom: 0,
-      paddingLeft: 15,
-      paddingRight: 15,
+      paddingLeft: 7,
+      paddingRight: 7,
       paddingTop: 0,
       width: 230
     },
@@ -52,11 +52,11 @@ const createStyles = (palette, tabColor) => {
     menuItemLeftElementContainer: {
       // borderColor: tabColor,
       // borderWidth: 2,
-      backgroundColor: "transparent",
+      backgroundColor: 'transparent',
       width: 30
     },
     menuItemPrimaryText: {
-      alignSelf: "center",
+      alignSelf: 'center',
       marginLeft: -30
     },
     photoButton: {
@@ -70,12 +70,12 @@ const createStyles = (palette, tabColor) => {
     },
     photoButtonWrapper: {
       borderRadius: 10,
-      overflow: "hidden"
+      overflow: 'hidden'
     },
     photoButtonsContainer: {
-      flexDirection: "row",
+      flexDirection: 'row',
       height: 50,
-      justifyContent: "space-between",
+      justifyContent: 'space-between',
       marginBottom: 25,
       width: 175
     },
@@ -88,10 +88,10 @@ const createStyles = (palette, tabColor) => {
       flex: 1
     },
     scrollViewContentWrapper: {
-      alignItems: "center",
+      alignItems: 'center',
       flex: 1,
-      flexDirection: "column",
-      justifyContent: "flex-start",
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
       padding: 10
     }
   });

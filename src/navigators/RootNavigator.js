@@ -4,31 +4,28 @@
  * @format
  */
 
-import PropTypes from "prop-types";
-import React from "react";
-import {
-  Drawer,
-  Lightbox,
-  Modal,
-  Router,
-  Scene,
-  Tabs
-} from "react-native-router-flux";
-import { Icon } from "react-native-material-ui";
-import { StatusBar, View } from "react-native";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Drawer, Modal, Router, Scene, Tabs } from 'react-native-router-flux';
+import { Icon } from 'react-native-material-ui';
+import { StatusBar, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
-import Admob from "../dataPresentation/Admob/AdmobScreen";
-import CropPickerHOC from "../dataPresentation/CropPicker/CropPickerHOC";
-import FastImage from "../dataPresentation/FastImage/FastImageScreen";
-import ModalImageViewer from "../dataPresentation/commonComponents/ModalMediaViewer";
-import TabDrawerContainer from "../dataPresentation/TabDrawer/TabDrawerContainer";
-import TabIcon from "../dataPresentation/commonComponents/TabIcon";
-import VideoContainer from "../dataPresentation/Video/VideoContainer";
-import SettingsScene from "../dataPresentation/Settings/SettingsScene";
-import createStyles from "./styles/RootNavigator.styles";
-import wrapIntoTheme from "../utils/intoThemeWrapper";
+import Admob from '../dataPresentation/Admob/AdmobScreen';
+import CropPickerHOC from '../dataPresentation/CropPicker/CropPickerHOC';
+import FastImage from '../dataPresentation/FastImage/FastImageScreen';
+import ModalImageViewer from '../dataPresentation/commonComponents/ModalMediaViewer';
+import TabDrawerContainer from '../dataPresentation/TabDrawer/TabDrawerContainer';
+import TabIcon from '../dataPresentation/commonComponents/TabIcon';
+import VideoContainer from '../dataPresentation/Video/VideoContainer';
+import SettingsHOC from '../dataPresentation/Settings/SettingsHOC';
+import createStyles from './styles/RootNavigator.styles';
+import wrapIntoTheme from '../utils/intoThemeWrapper';
 
-const RootNavigator = ({ theme }) => {
+const RootNavigator = (props) => {
+  const { t } = useTranslation();
+
+  const { theme } = props;
   const {
     accentColor,
     inactiveIcon,
@@ -42,7 +39,7 @@ const RootNavigator = ({ theme }) => {
       <StatusBar backgroundColor={primaryColor} />
       <Router>
         <Modal>
-          <Lightbox key="lightbox" hideNavBar>
+          <Modal key="lightbox" hideNavBar>
             <Drawer
               key="tabDrawer"
               contentComponent={TabDrawerContainer}
@@ -64,7 +61,7 @@ const RootNavigator = ({ theme }) => {
                 >
                   <Scene
                     key="cropPicker"
-                    title="Crop picker"
+                    title={t('cropPickerTitle')}
                     component={CropPickerHOC}
                     icon={TabIcon}
                     iconName="crop"
@@ -72,7 +69,7 @@ const RootNavigator = ({ theme }) => {
                   />
                   <Scene
                     key="admob"
-                    title="Advertisement"
+                    title={t('admobTitle')}
                     component={Admob}
                     icon={TabIcon}
                     iconName="announcement"
@@ -80,7 +77,7 @@ const RootNavigator = ({ theme }) => {
                   />
                   <Scene
                     key="video"
-                    title="Video"
+                    title={t('videoTitle')}
                     component={VideoContainer}
                     icon={TabIcon}
                     iconName="video-label"
@@ -88,7 +85,7 @@ const RootNavigator = ({ theme }) => {
                   />
                   <Scene
                     key="fastImage"
-                    title="Fast image"
+                    title={t('fastImageTitle')}
                     component={FastImage}
                     icon={TabIcon}
                     iconName="collections"
@@ -98,8 +95,8 @@ const RootNavigator = ({ theme }) => {
               </Scene>
             </Drawer>
 
-            <Scene key="settings" title="Settings" component={SettingsScene} />
-          </Lightbox>
+            <Scene key="settings" title="Settings" component={SettingsHOC} />
+          </Modal>
 
           <Scene
             key="mediaView"
