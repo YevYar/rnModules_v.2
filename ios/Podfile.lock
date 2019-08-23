@@ -61,6 +61,8 @@ PODS:
   - React-jsinspector (0.60.4)
   - react-native-image-picker (1.0.2):
     - React
+  - react-native-slider (2.0.0):
+    - React
   - react-native-video/Video (5.0.0):
     - React
   - react-native-video/VideoCaching (5.0.0):
@@ -68,6 +70,8 @@ PODS:
     - React
     - react-native-video/Video
     - SPTPersistentCache (~> 1.1.0)
+  - react-native-webview (6.9.0):
+    - React
   - React-RCTActionSheet (0.60.4):
     - React-Core (= 0.60.4)
   - React-RCTAnimation (0.60.4):
@@ -120,7 +124,9 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
+  - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - react-native-video/VideoCaching (from `../node_modules/react-native-video/react-native-video.podspec`)
+  - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -170,8 +176,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
+  react-native-slider:
+    :path: "../node_modules/@react-native-community/slider"
   react-native-video:
     :path: "../node_modules/react-native-video/react-native-video.podspec"
+  react-native-webview:
+    :path: "../node_modules/react-native-webview"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -219,7 +229,9 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 7549641e48bafae7bfee3f3ea19bf4901639c5de
   React-jsinspector: 73f24a02fa684ed6a2b828ba116874a2191ded88
   react-native-image-picker: 5c15ac0251475ae0b9f21e17d08d7c28db847abc
+  react-native-slider: 40bdbfc1af0393922ac331bc1d95a6c5d5174fb6
   react-native-video: 6555881252c8ca039760e1cd6df28ac28ffb2baf
+  react-native-webview: 2d8de2be422f0f8b9ba38db3f013f9ebfdb9b78f
   React-RCTActionSheet: 9f71d7ae3e8fb10e08d162cbf14c621349dbfab3
   React-RCTAnimation: 981d8c95b0e30918a9832ccac32af83562a27fae
   React-RCTBlob: 21e73d1020a302a75fed30dbaee9f15287b80baa

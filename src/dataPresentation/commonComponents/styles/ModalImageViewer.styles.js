@@ -17,7 +17,7 @@ const createStyles = palette => {
   return StyleSheet.create({
     arrowBack: { color: navigationElementsColor },
     image: { flex: 1, borderWidth: 2, borderColor: "red" },
-    imgViewer: { flex: 1 },
+    imgViewer: { flex: 1, overflow: "visible" },
     navBar: {
       alignItems: "flex-start",
       backgroundColor: mediaPreviewColorHeader,

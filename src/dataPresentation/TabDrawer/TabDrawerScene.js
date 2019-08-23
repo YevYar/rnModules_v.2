@@ -5,11 +5,13 @@
  */
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+import InstagramLogin from 'react-native-instagram-login';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { Avatar, Button, ListItem } from 'react-native-material-ui';
 import { Alert, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { FBLogin, FBLoginManager } from 'react-native-facebook-login';
 
 import createStyles from './TabDrawer.styles';
 import i18next from '../../translations/index';
@@ -57,7 +59,6 @@ class TabDrawerScene extends Component {
                 <Button
                   text=""
                   icon="local-see"
-                  upperCase={false}
                   style={{ container: styles.photoButton }}
                 />
               </View>
@@ -65,7 +66,6 @@ class TabDrawerScene extends Component {
                 <Button
                   text=""
                   icon="photo-library"
-                  upperCase={false}
                   style={{ container: styles.photoButton }}
                 />
               </View>
@@ -94,6 +94,16 @@ class TabDrawerScene extends Component {
                 leftElementContainer: styles.menuItemLeftElementContainer,
                 primaryText: styles.menuItemPrimaryText
               }}
+            />
+
+            <InstagramLogin
+              ref={ref => (this.instagramLogin = ref)}
+              clientId="a805d796528b4ed485dfd5323442f6d0"
+              redirectUrl="http://www.google.com"
+              scopes={['basic']}
+              onLoginSuccess={token => console.log(token)}
+              onLoginFailure={data => Alert.alert(data)}
+              modalVisible
             />
 
             <View style={styles.loginButtonsContainer}>
@@ -138,7 +148,7 @@ class TabDrawerScene extends Component {
                   name="instagram"
                   backgroundColor={instagramColor}
                   borderRadius={5}
-                  onPress={() => Alert.alert('instagram')}
+                  onPress={() => this.instagramLogin.show()}
                 >
                   <Text style={styles.loginButtonText}>
                     {i18next.t('instagramLoginText')}

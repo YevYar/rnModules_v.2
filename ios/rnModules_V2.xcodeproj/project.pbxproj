@@ -23,6 +23,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* rnModules_V2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* rnModules_V2Tests.m */; };
 		2FF0A62D9CC74202B9557C30 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9C8EC65A9D74B3693B1524B /* FontAwesome5_Regular.ttf */; };
 		360B6C3322F9B750006D2FFA /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 360B6C3222F9B750006D2FFA /* MaterialIcons.ttf */; };
+		3622AE1123101F3D009ED5FB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3622AE1023101F3D009ED5FB /* Launch Screen.storyboard */; };
 		3CB4D35413BA28A0125723BB /* libPods-rnModules_V2-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A9A10DD6885572A320C7C5 /* libPods-rnModules_V2-tvOSTests.a */; };
 		448F9517233047D588318381 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9EE3482128A7403986D38C86 /* Roboto-Medium.ttf */; };
 		6549A2D4E66F4B1D97B7CADB /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A552F1DBA924D26B8041403 /* Roboto-BoldItalic.ttf */; };
@@ -89,6 +90,7 @@
 		2FB1FED5297CE25310897F13 /* libPods-rnModules_V2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rnModules_V2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31949E8EBF0E4C0F89589475 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		360B6C3222F9B750006D2FFA /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		3622AE1023101F3D009ED5FB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		375FE581EF197E3B820CB88A /* Pods-rnModules_V2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnModules_V2.debug.xcconfig"; path = "Target Support Files/Pods-rnModules_V2/Pods-rnModules_V2.debug.xcconfig"; sourceTree = "<group>"; };
 		3B1F555FFBA827946B848575 /* Pods-rnModules_V2-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnModules_V2-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-rnModules_V2-tvOSTests/Pods-rnModules_V2-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		455861C1F97E47FDB75BF297 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
@@ -184,10 +186,11 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
-				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				3622AE1023101F3D009ED5FB /* Launch Screen.storyboard */,
 			);
 			name = rnModules_V2;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				20C336A2C49343E0BF5EB6D5 /* FontAwesome5_Brands.ttf in Resources */,
 				2FF0A62D9CC74202B9557C30 /* FontAwesome5_Regular.ttf in Resources */,
 				92D70F3CCE4145B68DBA0B68 /* FontAwesome5_Solid.ttf in Resources */,
+				3622AE1123101F3D009ED5FB /* Launch Screen.storyboard in Resources */,
 				8F3FEC7441A746F29F037247 /* Fontisto.ttf in Resources */,
 				8CB61BF56E314F1EAEE64C10 /* Foundation.ttf in Resources */,
 				B16639C36E754C9EBACFD1FE /* Ionicons.ttf in Resources */,
@@ -810,6 +814,7 @@
 			baseConfigurationReference = 375FE581EF197E3B820CB88A /* Pods-rnModules_V2.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
@@ -832,6 +837,7 @@
 			baseConfigurationReference = 7391E1A584B20A8F98F6B2EC /* Pods-rnModules_V2.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XPQ463HY63;
