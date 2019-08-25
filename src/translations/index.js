@@ -4,35 +4,29 @@
  * @format
  */
 
-import i18next from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import i18next from "i18next";
+import { initReactI18next } from "react-i18next";
 
-import en from './english';
-import ru from './russian';
-import ua from './ukrainian';
+import en from "./english";
+import ru from "./russian";
+import ua from "./ukrainian";
 
-export const languages = { en: 'English', ru: 'Русский', ua: 'Українська' };
-
-/* i18n.init({
-  fallbackLng: 'en',
-  defaultLocale: 'en-US',
-  locale: 'en',
-  resources: { en, ru, ua }
-}); */
+export const languages = { en: "English", ru: "Русский", ua: "Українська" };
 
 const languageDetector = {
-  type: 'languageDetector',
+  type: "languageDetector",
   async: true,
-  detect: cb => cb('en'),
+  detect: cb => cb("en"),
   init: () => {},
   cacheUserLanguage: () => {}
 };
 
 i18next
   .use(languageDetector)
+  // .use(i18nextReactNative)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
+    fallbackLng: "en",
     debug: true,
     resources: {
       en: { translation: { ...en } },
@@ -42,9 +36,3 @@ i18next
   });
 
 export default i18next;
-/*
-export default {
-  en: english,
-  ru: russian,
-  ua: ukrainian
-}; */

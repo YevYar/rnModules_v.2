@@ -4,21 +4,23 @@
  * @format
  */
 
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Actions } from 'react-native-router-flux';
-import { Button } from 'react-native-material-ui';
-import { Alert, Picker, View } from 'react-native';
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { Actions } from "react-native-router-flux";
+import { Button } from "react-native-material-ui";
+import { Picker, View } from "react-native";
+import { withTranslation } from "react-i18next";
 
-import createStyles from './Settings.styles';
-import i18next from '../../translations/index';
-import intoThemeWrapper from '../../utils/intoThemeWrapper';
+import createStyles from "./Settings.styles";
+import intoThemeWrapper from "../../utils/intoThemeWrapper";
 
 class SettingsScene extends Component {
   static propTypes = {
+    i18n: PropTypes.object.isRequired,
     language: PropTypes.string.isRequired,
     languages: PropTypes.object.isRequired,
     languageHasBeenChanged: PropTypes.func.isRequired,
+    t: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired
   };
 
@@ -30,11 +32,12 @@ class SettingsScene extends Component {
 
   render() {
     const {
+      i18n,
       language,
       languages,
       languageHasBeenChanged,
+      t,
       theme
-      // i18n
     } = this.props;
 
     const styles = createStyles(theme.palette);
@@ -53,17 +56,16 @@ class SettingsScene extends Component {
           </Picker>
           <View style={styles.bottomButtons}>
             <Button
-              text={i18next.t('ok')}
+              text={t("ok")}
               onPress={() => {
-                Alert.alert(this.state.language);
-                i18next.changeLanguage(this.state.language);
+                i18n.changeLanguage(this.state.language);
                 languageHasBeenChanged(this.state.language);
                 Actions.pop();
               }}
               primary
             />
             <Button
-              text={i18next.t('cancel')}
+              text={t("cancel")}
               onPress={() => {
                 Actions.pop();
               }}
@@ -76,4 +78,4 @@ class SettingsScene extends Component {
   }
 }
 
-export default intoThemeWrapper(SettingsScene);
+export default intoThemeWrapper(withTranslation()(SettingsScene));
