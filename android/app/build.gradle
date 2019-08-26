@@ -201,7 +201,7 @@ dependencies {
       implementation jscFlavor
     }
 
-    implementation project(':react-native-local-auth')
+    implementation project(':react-native-twitter-signin')
 }
 
 // Run this once to be able to run the application with BUCK

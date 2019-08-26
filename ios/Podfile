@@ -38,12 +38,18 @@ target 'rnModules_V2' do
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
 
+  pod 'react-native-twitter-signin', :path => '../node_modules/react-native-twitter-signin'
+  
+  # use_frameworks!
+  pod 'TwitterKit', '~> 3.3.0'
+
   target 'rnModules_V2Tests' do
     inherit! :search_paths
     # Pods for testing
   end
 
   use_native_modules!
+  
 end
 
 target 'rnModules_V2-tvOS' do

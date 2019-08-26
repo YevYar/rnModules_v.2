@@ -10,12 +10,27 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { Avatar, Button, ListItem } from 'react-native-material-ui';
-import { Alert, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import {
+  Alert,
+  NativeModules,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  View
+} from 'react-native';
 import { FBLogin, FBLoginManager } from 'react-native-facebook-login';
 import { withTranslation } from 'react-i18next';
 
 import createStyles from './TabDrawer.styles';
 import intoThemeWrapper from '../../utils/intoThemeWrapper';
+
+const { RNTwitterSignIn } = NativeModules;
+
+const Constants = {
+  // Dev Parse keys
+  TWITTER_COMSUMER_KEY: 'UH6tuXSAiNdL2p2v1MrAfpjCr',
+  TWITTER_CONSUMER_SECRET: '7F238uRVysrTAP8vmyuSmh3I60heBJtfOVdllKwd0mHdRPpC3m'
+};
 
 class TabDrawerScene extends Component {
   static propTypes = {
@@ -27,6 +42,24 @@ class TabDrawerScene extends Component {
   componentDidMount() {}
 
   componentWillUnmount() {}
+
+  _twitterSignIn = () => {
+    RNTwitterSignIn.init(
+      Constants.TWITTER_COMSUMER_KEY,
+      Constants.TWITTER_CONSUMER_SECRET
+    );
+    RNTwitterSignIn.logIn()
+      .then((loginData) => {
+        console.log(loginData);
+        const { authToken, authTokenSecret } = loginData;
+        if (authToken && authTokenSecret) {
+          this.setState({ isLoggedIn: true });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   render() {
     const { onSettingsPress, t, theme } = this.props;
@@ -125,7 +158,7 @@ class TabDrawerScene extends Component {
                   name="twitter"
                   backgroundColor={twitterColor}
                   borderRadius={5}
-                  onPress={() => Alert.alert('twitter')}
+                  onPress={this._twitterSignIn}
                 >
                   <Text style={styles.loginButtonText}>
                     {t('twitterLoginText')}

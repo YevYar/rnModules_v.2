@@ -65,6 +65,9 @@ PODS:
     - React
   - react-native-splash-screen (3.2.0):
     - React
+  - react-native-twitter-signin (1.1.1):
+    - React
+    - TwitterKit (~> 3.3)
   - react-native-video/Video (5.0.0):
     - React
   - react-native-video/VideoCaching (5.0.0):
@@ -111,6 +114,9 @@ PODS:
   - SPTPersistentCache (1.1.0)
   - TouchID (4.4.1):
     - React
+  - TwitterCore (3.2.0)
+  - TwitterKit (3.3.0):
+    - TwitterCore (>= 3.1.0)
   - yoga (0.60.4.React)
 
 DEPENDENCIES:
@@ -128,6 +134,7 @@ DEPENDENCIES:
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
+  - react-native-twitter-signin (from `../node_modules/react-native-twitter-signin`)
   - react-native-video/VideoCaching (from `../node_modules/react-native-video/react-native-video.podspec`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -144,6 +151,7 @@ DEPENDENCIES:
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - TouchID (from `../node_modules/react-native-touch-id`)
+  - TwitterKit (~> 3.3.0)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -153,6 +161,8 @@ SPEC REPOS:
     - QBImagePickerController
     - RSKImageCropper
     - SPTPersistentCache
+    - TwitterCore
+    - TwitterKit
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -183,6 +193,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/slider"
   react-native-splash-screen:
     :path: "../node_modules/react-native-splash-screen"
+  react-native-twitter-signin:
+    :path: "../node_modules/react-native-twitter-signin"
   react-native-video:
     :path: "../node_modules/react-native-video/react-native-video.podspec"
   react-native-webview:
@@ -236,6 +248,7 @@ SPEC CHECKSUMS:
   react-native-image-picker: 5c15ac0251475ae0b9f21e17d08d7c28db847abc
   react-native-slider: 40bdbfc1af0393922ac331bc1d95a6c5d5174fb6
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
+  react-native-twitter-signin: 5b737eab225a0059e6f8fe93c893c864d020b8b9
   react-native-video: 6555881252c8ca039760e1cd6df28ac28ffb2baf
   react-native-webview: 2d8de2be422f0f8b9ba38db3f013f9ebfdb9b78f
   React-RCTActionSheet: 9f71d7ae3e8fb10e08d162cbf14c621349dbfab3
@@ -254,8 +267,10 @@ SPEC CHECKSUMS:
   RSKImageCropper: a446db0e8444a036b34f3c43db01b2373baa4b2a
   SPTPersistentCache: df36ea46762d7cf026502bbb86a8b79d0080dff4
   TouchID: ba4c656d849cceabc2e4eef722dea5e55959ecf4
+  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
+  TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
-PODFILE CHECKSUM: 117d788fb80a96d1d3d83ba13a731da7f4de6dbc
+PODFILE CHECKSUM: ecdd3cbeab07573562b45e1c0eba3b1b8d131018
 
 COCOAPODS: 1.7.4

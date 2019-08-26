@@ -15,7 +15,6 @@ import com.facebook.soloader.SoLoader;
 import java.util.List;
 
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
-import io.tradle.reactlocalauth.LocalAuthPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
