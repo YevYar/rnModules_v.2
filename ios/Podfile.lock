@@ -63,6 +63,8 @@ PODS:
     - React
   - react-native-slider (2.0.0):
     - React
+  - react-native-splash-screen (3.2.0):
+    - React
   - react-native-video/Video (5.0.0):
     - React
   - react-native-video/VideoCaching (5.0.0):
@@ -125,6 +127,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
+  - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
   - react-native-video/VideoCaching (from `../node_modules/react-native-video/react-native-video.podspec`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -178,6 +181,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-image-picker"
   react-native-slider:
     :path: "../node_modules/@react-native-community/slider"
+  react-native-splash-screen:
+    :path: "../node_modules/react-native-splash-screen"
   react-native-video:
     :path: "../node_modules/react-native-video/react-native-video.podspec"
   react-native-webview:
@@ -230,6 +235,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 73f24a02fa684ed6a2b828ba116874a2191ded88
   react-native-image-picker: 5c15ac0251475ae0b9f21e17d08d7c28db847abc
   react-native-slider: 40bdbfc1af0393922ac331bc1d95a6c5d5174fb6
+  react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
   react-native-video: 6555881252c8ca039760e1cd6df28ac28ffb2baf
   react-native-webview: 2d8de2be422f0f8b9ba38db3f013f9ebfdb9b78f
   React-RCTActionSheet: 9f71d7ae3e8fb10e08d162cbf14c621349dbfab3
@@ -250,6 +256,6 @@ SPEC CHECKSUMS:
   TouchID: ba4c656d849cceabc2e4eef722dea5e55959ecf4
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
-PODFILE CHECKSUM: bba4354ec87ec54210e04a019fa39335f6148d89
+PODFILE CHECKSUM: 117d788fb80a96d1d3d83ba13a731da7f4de6dbc
 
 COCOAPODS: 1.7.4

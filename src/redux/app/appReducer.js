@@ -5,7 +5,7 @@
  * @format
  */
 
-import { LANGUAGE_HAS_BEEN_CHANGED } from "./appActions";
+import { LANGUAGE_HAS_BEEN_CHANGED } from './appActions';
 
 export default (state = {}, action) => {
   switch (action.type) {

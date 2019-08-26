@@ -4,15 +4,15 @@
  * @format
  */
 
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import { Actions } from "react-native-router-flux";
-import { Button } from "react-native-material-ui";
-import { Picker, View } from "react-native";
-import { withTranslation } from "react-i18next";
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Actions } from 'react-native-router-flux';
+import { Button } from 'react-native-material-ui';
+import { Picker, View } from 'react-native';
+import { withTranslation } from 'react-i18next';
 
-import createStyles from "./Settings.styles";
-import intoThemeWrapper from "../../utils/intoThemeWrapper";
+import createStyles from './Settings.styles';
+import intoThemeWrapper from '../../utils/intoThemeWrapper';
 
 class SettingsScene extends Component {
   static propTypes = {
@@ -56,7 +56,7 @@ class SettingsScene extends Component {
           </Picker>
           <View style={styles.bottomButtons}>
             <Button
-              text={t("ok")}
+              text={t('ok')}
               onPress={() => {
                 i18n.changeLanguage(this.state.language);
                 languageHasBeenChanged(this.state.language);
@@ -65,7 +65,7 @@ class SettingsScene extends Component {
               primary
             />
             <Button
-              text={t("cancel")}
+              text={t('cancel')}
               onPress={() => {
                 Actions.pop();
               }}

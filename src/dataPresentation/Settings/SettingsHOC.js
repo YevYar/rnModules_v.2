@@ -4,13 +4,11 @@
  * @format
  */
 
-import SettingsContainer from "./SettingsContainer";
-import wrapIntoRedux from "../../utils/intoReduxWrapper";
-import { languageHasBeenChanged } from "../../redux/app/appActions";
+import SettingsContainer from './SettingsContainer';
+import wrapIntoRedux from '../../utils/intoReduxWrapper';
+import { languageHasBeenChanged } from '../../redux/app/appActions';
 
-const mapStateToProps = state => ({
-  language: state.appState.language
-});
+const mapStateToProps = state => ({ language: state.appState.language });
 
 const mapDispatchToProps = { languageHasBeenChanged };
 

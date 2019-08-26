@@ -4,25 +4,25 @@
  * @format
  */
 
-import PropTypes from "prop-types";
-import React from "react";
-import { Drawer, Modal, Router, Scene, Tabs } from "react-native-router-flux";
-import { Icon } from "react-native-material-ui";
-import { StatusBar, View } from "react-native";
-import { withTranslation } from "react-i18next";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Drawer, Modal, Router, Scene, Tabs } from 'react-native-router-flux';
+import { Icon } from 'react-native-material-ui';
+import { StatusBar, View } from 'react-native';
+import { withTranslation } from 'react-i18next';
 
-import Admob from "../dataPresentation/Admob/AdmobScreen";
-import CropPickerHOC from "../dataPresentation/CropPicker/CropPickerHOC";
-import FastImage from "../dataPresentation/FastImage/FastImageScreen";
-import ModalImageViewer from "../dataPresentation/commonComponents/ModalMediaViewer";
-import TabDrawerContainer from "../dataPresentation/TabDrawer/TabDrawerContainer";
-import TabIcon from "../dataPresentation/commonComponents/TabIcon";
-import VideoContainer from "../dataPresentation/Video/VideoContainer";
-import SettingsHOC from "../dataPresentation/Settings/SettingsHOC";
-import createStyles from "./styles/RootNavigator.styles";
-import wrapIntoTheme from "../utils/intoThemeWrapper";
+import Admob from '../dataPresentation/Admob/AdmobScreen';
+import CropPickerHOC from '../dataPresentation/CropPicker/CropPickerHOC';
+import FastImage from '../dataPresentation/FastImage/FastImageScreen';
+import ModalImageViewer from '../dataPresentation/commonComponents/ModalMediaViewer';
+import TabDrawerContainer from '../dataPresentation/TabDrawer/TabDrawerContainer';
+import TabIcon from '../dataPresentation/commonComponents/TabIcon';
+import VideoContainer from '../dataPresentation/Video/VideoContainer';
+import SettingsHOC from '../dataPresentation/Settings/SettingsHOC';
+import createStyles from './styles/RootNavigator.styles';
+import wrapIntoTheme from '../utils/intoThemeWrapper';
 
-const RootNavigator = props => {
+const RootNavigator = (props) => {
   const { t, theme } = props;
   const {
     accentColor,
@@ -59,7 +59,7 @@ const RootNavigator = props => {
                 >
                   <Scene
                     key="cropPicker"
-                    title={t("cropPickerTitle")}
+                    title={t('cropPickerTitle')}
                     component={CropPickerHOC}
                     icon={TabIcon}
                     iconName="crop"
@@ -67,7 +67,7 @@ const RootNavigator = props => {
                   />
                   <Scene
                     key="admob"
-                    title={t("admobTitle")}
+                    title={t('admobTitle')}
                     component={Admob}
                     icon={TabIcon}
                     iconName="announcement"
@@ -75,7 +75,7 @@ const RootNavigator = props => {
                   />
                   <Scene
                     key="video"
-                    title={t("videoTitle")}
+                    title={t('videoTitle')}
                     component={VideoContainer}
                     icon={TabIcon}
                     iconName="video-label"
@@ -83,7 +83,7 @@ const RootNavigator = props => {
                   />
                   <Scene
                     key="fastImage"
-                    title={t("fastImageTitle")}
+                    title={t('fastImageTitle')}
                     component={FastImage}
                     icon={TabIcon}
                     iconName="collections"

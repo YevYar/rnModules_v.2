@@ -4,16 +4,16 @@
  * @format
  */
 
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-import { Button } from "react-native-material-ui";
-import { Platform, StatusBar, Text, View } from "react-native";
-import { withTranslation } from "react-i18next";
+import { Button } from 'react-native-material-ui';
+import { Platform, StatusBar, Text, View } from 'react-native';
+import { withTranslation } from 'react-i18next';
 
-import Gallery from "../commonComponents/Gallery";
-import createStyles from "./CropPicker.styles";
-import intoThemeWrapper from "../../utils/intoThemeWrapper";
+import Gallery from '../commonComponents/Gallery';
+import createStyles from './CropPicker.styles';
+import intoThemeWrapper from '../../utils/intoThemeWrapper';
 
 class CropPickerScreen extends Component {
   static propTypes = {
@@ -30,9 +30,9 @@ class CropPickerScreen extends Component {
 
   componentDidMount() {
     const { navigation, navigationBarStyle } = this.props;
-    this._navListener = navigation.addListener("didFocus", () => {
-      StatusBar.setBarStyle("light-content");
-      Platform.OS === "android" &&
+    this._navListener = navigation.addListener('didFocus', () => {
+      StatusBar.setBarStyle('light-content');
+      Platform.OS === 'android' &&
         StatusBar.setBackgroundColor(navigationBarStyle.backgroundColor);
     });
   }
@@ -56,7 +56,7 @@ class CropPickerScreen extends Component {
     return (
       <View style={styles.screen}>
         <Button
-          text={t("buttonTitle")}
+          text={t('buttonTitle')}
           accent
           raised
           onPress={onGetMedia /* this.showCropPickerMenu */}
@@ -64,7 +64,7 @@ class CropPickerScreen extends Component {
         />
         {chosenMedia.length > 0 && (
           <View style={styles.gridView}>
-            <Text style={styles.text}>{t("chosenMedias")}</Text>
+            <Text style={styles.text}>{t('chosenMedias')}</Text>
             <Gallery
               bufferConfig={bufferConfig}
               media={chosenMedia}
@@ -74,7 +74,7 @@ class CropPickerScreen extends Component {
         )}
         {takenMedia.length > 0 && (
           <View style={styles.gridView}>
-            <Text style={styles.text}>{t("takenMedias")}</Text>
+            <Text style={styles.text}>{t('takenMedias')}</Text>
             <Gallery
               bufferConfig={bufferConfig}
               media={takenMedia}

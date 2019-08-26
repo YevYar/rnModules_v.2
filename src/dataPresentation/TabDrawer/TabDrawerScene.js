@@ -4,18 +4,18 @@
  * @format
  */
 
-import Icon from "react-native-vector-icons/FontAwesome";
-import InstagramLogin from "react-native-instagram-login";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import { Actions } from "react-native-router-flux";
-import { Avatar, Button, ListItem } from "react-native-material-ui";
-import { Alert, SafeAreaView, ScrollView, Text, View } from "react-native";
-import { FBLogin, FBLoginManager } from "react-native-facebook-login";
-import { withTranslation } from "react-i18next";
+import Icon from 'react-native-vector-icons/FontAwesome';
+import InstagramLogin from 'react-native-instagram-login';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Actions } from 'react-native-router-flux';
+import { Avatar, Button, ListItem } from 'react-native-material-ui';
+import { Alert, SafeAreaView, ScrollView, Text, View } from 'react-native';
+import { FBLogin, FBLoginManager } from 'react-native-facebook-login';
+import { withTranslation } from 'react-i18next';
 
-import createStyles from "./TabDrawer.styles";
-import intoThemeWrapper from "../../utils/intoThemeWrapper";
+import createStyles from './TabDrawer.styles';
+import intoThemeWrapper from '../../utils/intoThemeWrapper';
 
 class TabDrawerScene extends Component {
   static propTypes = {
@@ -74,7 +74,7 @@ class TabDrawerScene extends Component {
 
             <ListItem
               leftElement="settings"
-              centerElement={{ primaryText: t("settings") }}
+              centerElement={{ primaryText: t('settings') }}
               style={{
                 container: styles.menuItemContainer,
                 leftElementContainer: styles.menuItemLeftElementContainer,
@@ -89,7 +89,7 @@ class TabDrawerScene extends Component {
 
             <ListItem
               leftElement="vpn-key"
-              centerElement={{ primaryText: t("signIn") }}
+              centerElement={{ primaryText: t('signIn') }}
               style={{
                 container: styles.menuItemContainer,
                 leftElementContainer: styles.menuItemLeftElementContainer,
@@ -101,7 +101,7 @@ class TabDrawerScene extends Component {
               ref={ref => (this.instagramLogin = ref)}
               clientId="a805d796528b4ed485dfd5323442f6d0"
               redirectUrl="http://www.google.com"
-              scopes={["basic"]}
+              scopes={['basic']}
               onLoginSuccess={token => console.log(token)}
               onLoginFailure={data => Alert.alert(data)}
               modalVisible
@@ -113,10 +113,10 @@ class TabDrawerScene extends Component {
                   name="facebook"
                   backgroundColor={facebookColor}
                   borderRadius={5}
-                  onPress={() => Alert.alert("facebook")}
+                  onPress={() => Alert.alert('facebook')}
                 >
                   <Text style={styles.loginButtonText}>
-                    {t("facebookLoginText")}
+                    {t('facebookLoginText')}
                   </Text>
                 </Icon.Button>
               </View>
@@ -125,10 +125,10 @@ class TabDrawerScene extends Component {
                   name="twitter"
                   backgroundColor={twitterColor}
                   borderRadius={5}
-                  onPress={() => Alert.alert("twitter")}
+                  onPress={() => Alert.alert('twitter')}
                 >
                   <Text style={styles.loginButtonText}>
-                    {t("twitterLoginText")}
+                    {t('twitterLoginText')}
                   </Text>
                 </Icon.Button>
               </View>
@@ -137,10 +137,10 @@ class TabDrawerScene extends Component {
                   name="google"
                   backgroundColor={googleColor}
                   borderRadius={5}
-                  onPress={() => Alert.alert("google")}
+                  onPress={() => Alert.alert('google')}
                 >
                   <Text style={styles.loginButtonText}>
-                    {t("googleLoginText")}
+                    {t('googleLoginText')}
                   </Text>
                 </Icon.Button>
               </View>
@@ -152,7 +152,7 @@ class TabDrawerScene extends Component {
                   onPress={() => this.instagramLogin.show()}
                 >
                   <Text style={styles.loginButtonText}>
-                    {t("instagramLoginText")}
+                    {t('instagramLoginText')}
                   </Text>
                 </Icon.Button>
               </View>

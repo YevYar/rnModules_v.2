@@ -4,10 +4,10 @@
  * @format
  */
 
-import React from "react";
-import { Actions } from "react-native-router-flux";
+import React from 'react';
+import { Actions } from 'react-native-router-flux';
 
-import TabDrawerScene from "./TabDrawerScene";
+import TabDrawerScene from './TabDrawerScene';
 
 const onSettingsPress = () => Actions.settings(Actions.currentParams);
 

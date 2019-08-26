@@ -36,6 +36,8 @@ target 'rnModules_V2' do
   
   pod 'TouchID', :path => '../node_modules/react-native-touch-id'
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
   target 'rnModules_V2Tests' do
     inherit! :search_paths
     # Pods for testing
