@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">rnModules_V2</string>
+    <string name="facebook_app_id">587806821624647</string>
+    <string name="fb_login_protocol_scheme">fb{587806821624647}</string>
 </resources>

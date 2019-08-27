@@ -42,6 +42,8 @@ target 'rnModules_V2' do
   
   # use_frameworks!
   pod 'TwitterKit', '~> 3.3.0'
+  
+  # pod 'FBSDKLoginKit'
 
   target 'rnModules_V2Tests' do
     inherit! :search_paths

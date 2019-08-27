@@ -16,6 +16,8 @@ import java.util.List;
 
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 
+// import com.magus.fblogin.FacebookLoginPackage;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -31,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
       // Packages that cannot be autolinked yet can be added manually here, for example:
       // packages.add(new MyReactNativePackage());
       // packages.add(new LocalAuthPackage());
+      // packages.add(new FacebookLoginPackage());
       return packages;
     }
 

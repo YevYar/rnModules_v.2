@@ -8,16 +8,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const TabIcon = (props) => {
-  const { activeTintColor, focused, iconName, inactiveTintColor } = props;
-  return (
-    <Icon
-      name={iconName}
-      color={focused ? activeTintColor : inactiveTintColor}
-      size={30}
-    />
-  );
-};
+const TabIcon = ({ activeTintColor, focused, iconName, inactiveTintColor }) => (
+  <Icon
+    name={iconName}
+    color={focused ? activeTintColor : inactiveTintColor}
+    size={30}
+  />
+);
 
 TabIcon.propTypes = {
   activeTintColor: PropTypes.string.isRequired,

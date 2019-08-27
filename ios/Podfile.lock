@@ -1,7 +1,17 @@
 PODS:
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.9.0)
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
   - DVAssetLoaderDelegate (0.3.3)
+  - FBSDKCoreKit (4.40.0):
+    - Bolts (~> 1.9)
+  - FBSDKLoginKit (4.40.0):
+    - FBSDKCoreKit
   - Folly (2018.10.22.00):
     - boost-for-react-native
     - DoubleConversion
@@ -59,13 +69,17 @@ PODS:
     - React-cxxreact (= 0.60.4)
     - React-jsi (= 0.60.4)
   - React-jsinspector (0.60.4)
+  - react-native-facebook-login (1.6.1):
+    - FBSDKCoreKit (~> 4.40.0)
+    - FBSDKLoginKit (~> 4.40.0)
+    - React
   - react-native-image-picker (1.0.2):
     - React
   - react-native-slider (2.0.0):
     - React
   - react-native-splash-screen (3.2.0):
     - React
-  - react-native-twitter-signin (1.1.1):
+  - react-native-twitter-signin (1.1.0):
     - React
     - TwitterKit (~> 3.3)
   - react-native-video/Video (5.0.0):
@@ -131,6 +145,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-facebook-login (from `../node_modules/react-native-facebook-login`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
@@ -156,8 +171,11 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Bolts
     - boost-for-react-native
     - DVAssetLoaderDelegate
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - QBImagePickerController
     - RSKImageCropper
     - SPTPersistentCache
@@ -187,6 +205,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-facebook-login:
+    :path: "../node_modules/react-native-facebook-login"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
   react-native-slider:
@@ -231,9 +251,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   DVAssetLoaderDelegate: 0caec20e4e08b8560b691131539e9180024d4bce
+  FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
+  FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
@@ -245,10 +268,11 @@ SPEC CHECKSUMS:
   React-jsi: 21d3153b1153fbf6510a92b6b11e33e725cb7432
   React-jsiexecutor: 7549641e48bafae7bfee3f3ea19bf4901639c5de
   React-jsinspector: 73f24a02fa684ed6a2b828ba116874a2191ded88
+  react-native-facebook-login: 4557cdb08029652a9c5eabd223b44681d091844f
   react-native-image-picker: 5c15ac0251475ae0b9f21e17d08d7c28db847abc
   react-native-slider: 40bdbfc1af0393922ac331bc1d95a6c5d5174fb6
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
-  react-native-twitter-signin: 5b737eab225a0059e6f8fe93c893c864d020b8b9
+  react-native-twitter-signin: d85aa337ac3f564eea008053b6eb30e56ea09f40
   react-native-video: 6555881252c8ca039760e1cd6df28ac28ffb2baf
   react-native-webview: 2d8de2be422f0f8b9ba38db3f013f9ebfdb9b78f
   React-RCTActionSheet: 9f71d7ae3e8fb10e08d162cbf14c621349dbfab3
@@ -271,6 +295,6 @@ SPEC CHECKSUMS:
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
-PODFILE CHECKSUM: ecdd3cbeab07573562b45e1c0eba3b1b8d131018
+PODFILE CHECKSUM: 701ba3b55d939823c2537c31ada9f837e3af9de6
 
 COCOAPODS: 1.7.4

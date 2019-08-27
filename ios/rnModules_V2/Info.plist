@@ -105,13 +105,24 @@
       <key>CFBundleURLSchemes</key>
       <array>
         <string>twitterkit-UH6tuXSAiNdL2p2v1MrAfpjCr</string>
-        </array>
-      </dict>
-    </array>
-    <key>LSApplicationQueriesSchemes</key>
+        <string>fb587806821624647</string>
+      </array>
+    </dict>
+  </array>
+  <key>LSApplicationQueriesSchemes</key>
     <array>
       <string>twitter</string>
       <string>twitterauth</string>
+      <string>fbapi</string>
+      <string>fb-messenger-share-api</string>
+      <string>fbauth2</string>
+      <string>fbshareextension</string>
     </array>
+    
+    <key>FacebookAppID</key>
+    <string>587806821624647</string>
+    <key>FacebookDisplayName</key>
+    <string>rnModules_V2</string>
+    
 </dict>
 </plist>

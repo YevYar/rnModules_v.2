@@ -21,6 +21,7 @@ import {
 import { FBLogin, FBLoginManager } from 'react-native-facebook-login';
 import { withTranslation } from 'react-i18next';
 
+import FacebookButton from '../commonComponents/FacebookButton';
 import createStyles from './TabDrawer.styles';
 import intoThemeWrapper from '../../utils/intoThemeWrapper';
 
@@ -129,30 +130,54 @@ class TabDrawerScene extends Component {
                 primaryText: styles.menuItemPrimaryText
               }}
             />
-
-            <InstagramLogin
-              ref={ref => (this.instagramLogin = ref)}
-              clientId="a805d796528b4ed485dfd5323442f6d0"
-              redirectUrl="http://www.google.com"
-              scopes={['basic']}
-              onLoginSuccess={token => console.log(token)}
-              onLoginFailure={data => Alert.alert(data)}
-              modalVisible
-            />
-
             <View style={styles.loginButtonsContainer}>
-              <View style={styles.loginButton}>
-                <Icon.Button
-                  name="facebook"
-                  backgroundColor={facebookColor}
-                  borderRadius={5}
-                  onPress={() => Alert.alert('facebook')}
-                >
-                  <Text style={styles.loginButtonText}>
-                    {t('facebookLoginText')}
-                  </Text>
-                </Icon.Button>
-              </View>
+              <FBLogin
+                /* buttonView={
+                  <View style={styles.loginButton}>
+                    <Icon.Button
+                      name="facebook"
+                      backgroundColor={facebookColor}
+                      borderRadius={5}
+                      onPress={() => Alert.alert("facebook")}
+                    >
+                      <Text style={styles.loginButtonText}>
+                        {t("facebookLoginText")}
+                      </Text>
+                    </Icon.Button>
+                  </View>
+                } */
+                buttonView={<FacebookButton />}
+                ref={(fbLogin) => {
+                  this.fbLogin = fbLogin;
+                }}
+                loginBehavior={FBLoginManager.LoginBehaviors.Web}
+                permissions={['email']}
+                onLogin={function (e) {
+                  console.log('login');
+                  console.log(e);
+                }}
+                onLoginFound={function (e) {
+                  console.log('login found');
+                  console.log(e);
+                }}
+                onLoginNotFound={function (e) {
+                  console.log('login not found');
+                  console.log(e);
+                }}
+                onLogout={function (e) {
+                  console.log('logout');
+                  console.log(e);
+                }}
+                onCancel={function (e) {
+                  console.log('cancel');
+                  console.log(e);
+                }}
+                onPermissionsMissing={function (e) {
+                  console.log('permissions missing');
+                  console.log(e);
+                }}
+              />
+
               <View style={styles.loginButton}>
                 <Icon.Button
                   name="twitter"
@@ -177,6 +202,17 @@ class TabDrawerScene extends Component {
                   </Text>
                 </Icon.Button>
               </View>
+
+              <InstagramLogin
+                ref={ref => (this.instagramLogin = ref)}
+                clientId="a805d796528b4ed485dfd5323442f6d0"
+                redirectUrl="http://www.google.com"
+                scopes={['basic']}
+                onLoginSuccess={token => console.log(token)}
+                onLoginFailure={data => Alert.alert(data)}
+                modalVisible
+              />
+
               <View style={styles.loginButton}>
                 <Icon.Button
                   name="instagram"

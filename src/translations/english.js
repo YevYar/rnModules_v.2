@@ -26,6 +26,7 @@ export default {
 
   // tab drawer buttons
   facebookLoginText: 'Login with Facebook',
+  facebookLogoutText: 'Logout from Facebook',
   instagramLoginText: 'Login with Instagram',
   googleLoginText: 'Login with Google',
   settings: 'Settings',
