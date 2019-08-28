@@ -1,17 +1,17 @@
 PODS:
-  - Bolts (1.9.0):
-    - Bolts/AppLinks (= 1.9.0)
-    - Bolts/Tasks (= 1.9.0)
-  - Bolts/AppLinks (1.9.0):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.9.0)
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
   - DVAssetLoaderDelegate (0.3.3)
-  - FBSDKCoreKit (4.40.0):
-    - Bolts (~> 1.9)
-  - FBSDKLoginKit (4.40.0):
-    - FBSDKCoreKit
+  - FBSDKCoreKit (5.4.1):
+    - FBSDKCoreKit/Basics (= 5.4.1)
+    - FBSDKCoreKit/Core (= 5.4.1)
+  - FBSDKCoreKit/Basics (5.4.1)
+  - FBSDKCoreKit/Core (5.4.1):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (5.4.1):
+    - FBSDKCoreKit (~> 5.0)
+  - FBSDKShareKit (5.4.1):
+    - FBSDKCoreKit (~> 5.0)
   - Folly (2018.10.22.00):
     - boost-for-react-native
     - DoubleConversion
@@ -69,9 +69,21 @@ PODS:
     - React-cxxreact (= 0.60.4)
     - React-jsi (= 0.60.4)
   - React-jsinspector (0.60.4)
-  - react-native-facebook-login (1.6.1):
-    - FBSDKCoreKit (~> 4.40.0)
-    - FBSDKLoginKit (~> 4.40.0)
+  - react-native-cookies (3.2.0):
+    - React
+  - react-native-fbsdk (1.0.2):
+    - React
+    - react-native-fbsdk/Core (= 1.0.2)
+    - react-native-fbsdk/Login (= 1.0.2)
+    - react-native-fbsdk/Share (= 1.0.2)
+  - react-native-fbsdk/Core (1.0.2):
+    - FBSDKCoreKit (~> 5.0)
+    - React
+  - react-native-fbsdk/Login (1.0.2):
+    - FBSDKLoginKit (~> 5.0)
+    - React
+  - react-native-fbsdk/Share (1.0.2):
+    - FBSDKShareKit (~> 5.0)
     - React
   - react-native-image-picker (1.0.2):
     - React
@@ -145,7 +157,8 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - react-native-facebook-login (from `../node_modules/react-native-facebook-login`)
+  - react-native-cookies (from `../node_modules/react-native-cookies/ios`)
+  - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
@@ -171,11 +184,11 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Bolts
     - boost-for-react-native
     - DVAssetLoaderDelegate
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - FBSDKShareKit
     - QBImagePickerController
     - RSKImageCropper
     - SPTPersistentCache
@@ -205,8 +218,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
-  react-native-facebook-login:
-    :path: "../node_modules/react-native-facebook-login"
+  react-native-cookies:
+    :path: "../node_modules/react-native-cookies/ios"
+  react-native-fbsdk:
+    :path: "../node_modules/react-native-fbsdk"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
   react-native-slider:
@@ -251,12 +266,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
-  Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   DVAssetLoaderDelegate: 0caec20e4e08b8560b691131539e9180024d4bce
-  FBSDKCoreKit: ae214474b25033399c131dc81d258e412582a2ba
-  FBSDKLoginKit: 7a1e411d46acc8834588eca437daf34de42e1d52
+  FBSDKCoreKit: 5144671077d67f07d7d243dbc7fd57a171f73954
+  FBSDKLoginKit: ff38b353b6843353f090028eb1b895c78aa82796
+  FBSDKShareKit: dfea6d7a3683672fd8e50f453eaa754f922bf2b8
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
@@ -268,7 +283,8 @@ SPEC CHECKSUMS:
   React-jsi: 21d3153b1153fbf6510a92b6b11e33e725cb7432
   React-jsiexecutor: 7549641e48bafae7bfee3f3ea19bf4901639c5de
   React-jsinspector: 73f24a02fa684ed6a2b828ba116874a2191ded88
-  react-native-facebook-login: 4557cdb08029652a9c5eabd223b44681d091844f
+  react-native-cookies: 854d59c4135c70b92a02ca4930e68e4e2eb58150
+  react-native-fbsdk: 1309be490bdf18ae29f4cef836f69194b436d9d7
   react-native-image-picker: 5c15ac0251475ae0b9f21e17d08d7c28db847abc
   react-native-slider: 40bdbfc1af0393922ac331bc1d95a6c5d5174fb6
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
@@ -295,6 +311,6 @@ SPEC CHECKSUMS:
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
-PODFILE CHECKSUM: 701ba3b55d939823c2537c31ada9f837e3af9de6
+PODFILE CHECKSUM: 14fa3944442008d70feb32736b66a918e3650a99
 
 COCOAPODS: 1.7.4

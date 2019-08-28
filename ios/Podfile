@@ -17,13 +17,13 @@ target 'rnModules_V2' do
   pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text'
   pod 'React-RCTVibration', :path => '../node_modules/react-native/Libraries/Vibration'
   pod 'React-RCTWebSocket', :path => '../node_modules/react-native/Libraries/WebSocket'
-
+  
   pod 'React-cxxreact', :path => '../node_modules/react-native/ReactCommon/cxxreact'
   pod 'React-jsi', :path => '../node_modules/react-native/ReactCommon/jsi'
   pod 'React-jsiexecutor', :path => '../node_modules/react-native/ReactCommon/jsiexecutor'
   pod 'React-jsinspector', :path => '../node_modules/react-native/ReactCommon/jsinspector'
   pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
-
+  
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
@@ -35,31 +35,29 @@ target 'rnModules_V2' do
   pod 'RNI18n', :path => '../node_modules/react-native-i18n'
   
   pod 'TouchID', :path => '../node_modules/react-native-touch-id'
-
+  
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
-
+  
   pod 'react-native-twitter-signin', :path => '../node_modules/react-native-twitter-signin'
   
   # use_frameworks!
   pod 'TwitterKit', '~> 3.3.0'
   
-  # pod 'FBSDKLoginKit'
-
   target 'rnModules_V2Tests' do
     inherit! :search_paths
     # Pods for testing
   end
-
+  
   use_native_modules!
   
 end
 
 target 'rnModules_V2-tvOS' do
   # Pods for rnModules_V2-tvOS
-
+  
   target 'rnModules_V2-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
-
+  
 end

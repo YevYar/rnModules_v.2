@@ -4,12 +4,12 @@
  * @format
  */
 
-import Icon from 'react-native-vector-icons/FontAwesome';
-import InstagramLogin from 'react-native-instagram-login';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { Actions } from 'react-native-router-flux';
-import { Avatar, Button, ListItem } from 'react-native-material-ui';
+import Icon from "react-native-vector-icons/FontAwesome";
+import InstagramLogin from "react-native-instagram-login";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { Actions } from "react-native-router-flux";
+import { Avatar, Button, ListItem } from "react-native-material-ui";
 import {
   Alert,
   NativeModules,
@@ -17,20 +17,20 @@ import {
   ScrollView,
   Text,
   View
-} from 'react-native';
-import { FBLogin, FBLoginManager } from 'react-native-facebook-login';
-import { withTranslation } from 'react-i18next';
+} from "react-native";
+import { LoginButton, AccessToken } from "react-native-fbsdk";
+import { withTranslation } from "react-i18next";
 
-import FacebookButton from '../commonComponents/FacebookButton';
-import createStyles from './TabDrawer.styles';
-import intoThemeWrapper from '../../utils/intoThemeWrapper';
+import createStyles from "./TabDrawer.styles";
+import intoThemeWrapper from "../../utils/intoThemeWrapper";
+import { login, logout } from "../../services/FacebookService";
 
 const { RNTwitterSignIn } = NativeModules;
 
 const Constants = {
   // Dev Parse keys
-  TWITTER_COMSUMER_KEY: 'UH6tuXSAiNdL2p2v1MrAfpjCr',
-  TWITTER_CONSUMER_SECRET: '7F238uRVysrTAP8vmyuSmh3I60heBJtfOVdllKwd0mHdRPpC3m'
+  TWITTER_COMSUMER_KEY: "UH6tuXSAiNdL2p2v1MrAfpjCr",
+  TWITTER_CONSUMER_SECRET: "7F238uRVysrTAP8vmyuSmh3I60heBJtfOVdllKwd0mHdRPpC3m"
 };
 
 class TabDrawerScene extends Component {
@@ -50,14 +50,14 @@ class TabDrawerScene extends Component {
       Constants.TWITTER_CONSUMER_SECRET
     );
     RNTwitterSignIn.logIn()
-      .then((loginData) => {
+      .then(loginData => {
         console.log(loginData);
         const { authToken, authTokenSecret } = loginData;
         if (authToken && authTokenSecret) {
           this.setState({ isLoggedIn: true });
         }
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -108,7 +108,7 @@ class TabDrawerScene extends Component {
 
             <ListItem
               leftElement="settings"
-              centerElement={{ primaryText: t('settings') }}
+              centerElement={{ primaryText: t("settings") }}
               style={{
                 container: styles.menuItemContainer,
                 leftElementContainer: styles.menuItemLeftElementContainer,
@@ -123,7 +123,7 @@ class TabDrawerScene extends Component {
 
             <ListItem
               leftElement="vpn-key"
-              centerElement={{ primaryText: t('signIn') }}
+              centerElement={{ primaryText: t("signIn") }}
               style={{
                 container: styles.menuItemContainer,
                 leftElementContainer: styles.menuItemLeftElementContainer,
@@ -131,52 +131,19 @@ class TabDrawerScene extends Component {
               }}
             />
             <View style={styles.loginButtonsContainer}>
-              <FBLogin
-                /* buttonView={
-                  <View style={styles.loginButton}>
-                    <Icon.Button
-                      name="facebook"
-                      backgroundColor={facebookColor}
-                      borderRadius={5}
-                      onPress={() => Alert.alert("facebook")}
-                    >
-                      <Text style={styles.loginButtonText}>
-                        {t("facebookLoginText")}
-                      </Text>
-                    </Icon.Button>
-                  </View>
-                } */
-                buttonView={<FacebookButton />}
-                ref={(fbLogin) => {
-                  this.fbLogin = fbLogin;
-                }}
-                loginBehavior={FBLoginManager.LoginBehaviors.Web}
-                permissions={['email']}
-                onLogin={function (e) {
-                  console.log('login');
-                  console.log(e);
-                }}
-                onLoginFound={function (e) {
-                  console.log('login found');
-                  console.log(e);
-                }}
-                onLoginNotFound={function (e) {
-                  console.log('login not found');
-                  console.log(e);
-                }}
-                onLogout={function (e) {
-                  console.log('logout');
-                  console.log(e);
-                }}
-                onCancel={function (e) {
-                  console.log('cancel');
-                  console.log(e);
-                }}
-                onPermissionsMissing={function (e) {
-                  console.log('permissions missing');
-                  console.log(e);
-                }}
-              />
+              <View style={styles.loginButton}>
+                <Icon.Button
+                  name="facebook"
+                  backgroundColor={facebookColor}
+                  borderRadius={5}
+                  onPress={login}
+                  onLongPress={logout}
+                >
+                  <Text style={styles.loginButtonText}>
+                    {t("facebookLoginText")}
+                  </Text>
+                </Icon.Button>
+              </View>
 
               <View style={styles.loginButton}>
                 <Icon.Button
@@ -186,7 +153,7 @@ class TabDrawerScene extends Component {
                   onPress={this._twitterSignIn}
                 >
                   <Text style={styles.loginButtonText}>
-                    {t('twitterLoginText')}
+                    {t("twitterLoginText")}
                   </Text>
                 </Icon.Button>
               </View>
@@ -195,10 +162,10 @@ class TabDrawerScene extends Component {
                   name="google"
                   backgroundColor={googleColor}
                   borderRadius={5}
-                  onPress={() => Alert.alert('google')}
+                  onPress={() => Alert.alert("google")}
                 >
                   <Text style={styles.loginButtonText}>
-                    {t('googleLoginText')}
+                    {t("googleLoginText")}
                   </Text>
                 </Icon.Button>
               </View>
@@ -207,7 +174,7 @@ class TabDrawerScene extends Component {
                 ref={ref => (this.instagramLogin = ref)}
                 clientId="a805d796528b4ed485dfd5323442f6d0"
                 redirectUrl="http://www.google.com"
-                scopes={['basic']}
+                scopes={["basic"]}
                 onLoginSuccess={token => console.log(token)}
                 onLoginFailure={data => Alert.alert(data)}
                 modalVisible
@@ -221,7 +188,7 @@ class TabDrawerScene extends Component {
                   onPress={() => this.instagramLogin.show()}
                 >
                   <Text style={styles.loginButtonText}>
-                    {t('instagramLoginText')}
+                    {t("instagramLoginText")}
                   </Text>
                 </Icon.Button>
               </View>

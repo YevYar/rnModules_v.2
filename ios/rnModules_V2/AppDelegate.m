@@ -39,14 +39,28 @@
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
   
-  /* [[FBSDKApplicationDelegate sharedInstance] application:app
+  if([[FBSDKApplicationDelegate sharedInstance] application:app
                                                                 openURL:url
                                                       sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
                                                              annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
-                  ]; */
+                  ])
+  return YES;
   
-  return [[Twitter sharedInstance] application:app openURL:url options:options];
+  if([[Twitter sharedInstance] application:app openURL:url options:options])
+  return YES;
+  
+  return NO;
 }
+
+/*- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+  return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                        openURL:url
+                                              sourceApplication:sourceApplication
+                                                     annotation:annotation];
+}*/
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {
