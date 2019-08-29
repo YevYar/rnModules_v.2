@@ -24,6 +24,11 @@ export default {
   takeVideo: 'Take a video',
   takenMedias: 'Taken medias',
 
+  // error messages
+  facebookIsNotInstalledMessage:
+    "You need install 'Facebook' app to share photos",
+  facebookIsNotInstalledTitle: 'Sharing error',
+
   // tab drawer buttons
   facebookLoginText: 'Login with Facebook',
   facebookLogoutText: 'Logout from Facebook',

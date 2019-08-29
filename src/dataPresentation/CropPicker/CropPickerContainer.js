@@ -4,17 +4,16 @@
  * @format
  */
 
-import React from "react";
-import TouchID from "react-native-touch-id";
-import { Actions } from "react-native-router-flux";
-import { withTranslation } from "react-i18next";
+import React from 'react';
+import TouchID from 'react-native-touch-id';
+import { Actions } from 'react-native-router-flux';
+import { withTranslation } from 'react-i18next';
 
-import CropPickerScreen from "./CropPickerScreen";
-import showCropPickerMenu from "../../services/CropPickerService";
-import { shareMedia } from "../../services/FacebookService";
+import CropPickerScreen from './CropPickerScreen';
+import showCropPickerMenu from '../../services/CropPickerService';
+import { shareMedia } from '../../services/FacebookService';
 
-export default withTranslation()(
-  ({ mediaHasBeenTaken, mediaHaveBeenChosen, t, ...props }) => {
+export default withTranslation()(({ mediaHasBeenTaken, mediaHaveBeenChosen, t, ...props }) => {
     const cropMenuOptions = {
       /**
        *  c - crop
@@ -25,22 +24,22 @@ export default withTranslation()(
        *  t - take
        *  v - video
        */
-      cancelButtonTitle: t("cancel"),
-      chooseFromLibraryButtonTitle: "",
+      cancelButtonTitle: t('cancel'),
+      chooseFromLibraryButtonTitle: '',
       customButtons: [
-        { name: "sme", title: t("chooseMedia") },
-        { name: "sc", title: t("chooseImageCropping") },
-        { name: "smme", title: t("chooseMediaMultiple") },
-        { name: "tp", title: t("takePhoto") },
-        { name: "tc", title: t("takePhotoCropping") },
-        { name: "tv", title: t("takeVideo") }
+        { name: 'sme', title: t('chooseMedia') },
+        { name: 'sc', title: t('chooseImageCropping') },
+        { name: 'smme', title: t('chooseMediaMultiple') },
+        { name: 'tp', title: t('takePhoto') },
+        { name: 'tc', title: t('takePhotoCropping') },
+        { name: 'tv', title: t('takeVideo') }
       ],
       storageOptions: {
         skipBackup: true,
-        path: "images"
+        path: 'images'
       },
-      takePhotoButtonTitle: "",
-      title: t("menuTitle")
+      takePhotoButtonTitle: '',
+      title: t('menuTitle')
     };
 
     const { backgroundColor } = props.navigationBarStyle;
@@ -52,15 +51,15 @@ export default withTranslation()(
     };
 
     const touchIdConfig = {
-      title: t("touchIdTitle"),
+      title: t('touchIdTitle'),
       imageColor: backgroundColor,
-      cancelText: t("cancel"),
+      cancelText: t('cancel'),
       passcodeFallback: true
     };
 
     const onGetMedia = () => {
-      TouchID.authenticate(t("reason"), touchIdConfig)
-        .then(response => {
+      TouchID.authenticate(t('reason'), touchIdConfig)
+        .then((response) => {
           console.log(response);
           // Alert.alert("Authenticated Successfully");
           showCropPickerMenu(
@@ -70,9 +69,15 @@ export default withTranslation()(
             cropPickerConfig
           );
         })
-        .catch(error => {
+        .catch((error) => {
           // Alert.alert("Authenticated Failed");
           console.log(error);
+          showCropPickerMenu(
+            mediaHasBeenTaken,
+            mediaHaveBeenChosen,
+            cropMenuOptions,
+            cropPickerConfig
+          );
         });
     };
 
@@ -99,5 +104,4 @@ export default withTranslation()(
         onMediaLongPress={shareMedia}
       />
     );
-  }
-);
+  });

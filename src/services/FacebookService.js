@@ -12,6 +12,10 @@ import {
   ShareDialog
 } from 'react-native-fbsdk';
 
+import i18next from '../translations/index';
+import isAppInstalled from './InstalledAppsService';
+import showErrorMessage from '../utils/showErrorMessage';
+
 const user = {};
 
 /** ****************
@@ -83,12 +87,25 @@ export const logout = () => {
 // This function should can share videos and photos, but shares only photos now
 export const shareMedia = (uri) => {
   console.log(uri);
-  const sharePhotoContent = {
-    contentType: 'photo',
-    photos: [{ imageUrl: uri }]
-  };
 
-  ShareDialog.show(sharePhotoContent);
+  isAppInstalled('facebook')
+    .then((isInstalled) => {
+      if (isInstalled) {
+        const sharePhotoContent = {
+          contentType: 'photo',
+          photos: [{ imageUrl: uri }]
+        };
+
+        ShareDialog.show(sharePhotoContent);
+      } else throw new Error('Facebook has not been installed');
+    })
+    .catch((error) => {
+      console.log(error);
+      showErrorMessage(
+        i18next.t('facebookIsNotInstalledTitle'),
+        i18next.t('facebookIsNotInstalledMessage')
+      );
+    });
 };
 
 /** ***********

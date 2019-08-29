@@ -24,6 +24,11 @@ export default {
   takeVideo: 'Зняти відео',
   takenMedias: 'Зроблені медіаресурси',
 
+  // error messages
+  facebookIsNotInstalledMessage:
+    'Вам потрібно встановити додаток "Facebook" для того, щоб мати можливість ділитися фотографіями',
+  facebookIsNotInstalledTitle: 'Не вдалося поділитися',
+
   // tab drawer buttons
   facebookLoginText: 'Увійти через Facebook',
   facebookLogoutText: 'Вийти з Facebook',

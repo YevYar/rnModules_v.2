@@ -24,6 +24,11 @@ export default {
   takeVideo: 'Снять видео',
   takenMedias: 'Сделанные медиаресурсы',
 
+  // error messages
+  facebookIsNotInstalledMessage:
+    'Вам нужно установить приложение "Facebook", чтобы делиться фотографиями',
+  facebookIsNotInstalledTitle: 'Не удалось поделиться',
+
   // tab drawer buttons
   facebookLoginText: 'Войти через Facebook',
   facebookLogoutText: 'Выйти из Facebook',
