@@ -18,6 +18,7 @@ class Gallery extends Component {
   static propTypes = {
     bufferConfig: PropTypes.object.isRequired,
     media: PropTypes.array.isRequired,
+    onMediaLongPress: PropTypes.func.isRequired,
     onMediaPress: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired
   };
@@ -32,10 +33,11 @@ class Gallery extends Component {
 
   _renderItem(data, i) {
     console.log(data);
-    const { onMediaPress, theme } = this.props;
+    const { onMediaLongPress, onMediaPress, theme } = this.props;
     return data.uri ? (
       <TouchableOpacity
         onPress={() => onMediaPress(i)}
+        onLongPress={() => onMediaLongPress(data.uri)}
         style={this.styles.mediaPreviewContainer}
       >
         {data.mime.includes('image') ? (

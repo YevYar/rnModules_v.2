@@ -5,7 +5,7 @@
  */
 
 import PropTypes from 'prop-types';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
 const createStyles = (palette, tabColor) => {
   const { tabDrawerIconsTextColor, tabDrawerTransparencyColor } = palette;
@@ -22,6 +22,12 @@ const createStyles = (palette, tabColor) => {
       height: 155,
       margin: 10,
       width: 155
+    },
+    facebookButton: {
+      height: 40,
+      marginLeft: Platform.OS === 'android' ? 2 : 0,
+      overflow: 'hidden',
+      width: Platform.OS === 'android' ? '98%' : null
     },
     loginButton: {
       borderColor: tabDrawerIconsTextColor,

@@ -6,7 +6,7 @@
 
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-
+import ScrollableTabView from 'react-native-scrollable-tab-view';
 import { Button } from 'react-native-material-ui';
 import { Platform, StatusBar, Text, View } from 'react-native';
 import { withTranslation } from 'react-i18next';
@@ -22,6 +22,7 @@ class CropPickerScreen extends Component {
     navigation: PropTypes.object.isRequired,
     navigationBarStyle: PropTypes.object.isRequired,
     onGetMedia: PropTypes.func.isRequired,
+    onMediaLongPress: PropTypes.func.isRequired,
     onMediaPress: PropTypes.func.isRequired,
     takenMedia: PropTypes.array.isRequired,
     t: PropTypes.func.isRequired,
@@ -46,6 +47,7 @@ class CropPickerScreen extends Component {
       bufferConfig,
       chosenMedia,
       onGetMedia,
+      onMediaLongPress,
       onMediaPress,
       takenMedia,
       t,
@@ -62,26 +64,22 @@ class CropPickerScreen extends Component {
           onPress={onGetMedia /* this.showCropPickerMenu */}
           style={{ container: styles.letButton }}
         />
-        {chosenMedia.length > 0 && (
-          <View style={styles.gridView}>
-            <Text style={styles.text}>{t('chosenMedias')}</Text>
-            <Gallery
-              bufferConfig={bufferConfig}
-              media={chosenMedia}
-              onMediaPress={onMediaPress(chosenMedia)}
-            />
-          </View>
-        )}
-        {takenMedia.length > 0 && (
-          <View style={styles.gridView}>
-            <Text style={styles.text}>{t('takenMedias')}</Text>
-            <Gallery
-              bufferConfig={bufferConfig}
-              media={takenMedia}
-              onMediaPress={onMediaPress(takenMedia)}
-            />
-          </View>
-        )}
+        <ScrollableTabView>
+          <Gallery
+            tabLabel={t('chosenMedias')}
+            bufferConfig={bufferConfig}
+            media={chosenMedia}
+            onMediaPress={onMediaPress(chosenMedia)}
+            onMediaLongPress={onMediaLongPress}
+          />
+          <Gallery
+            tabLabel={t('takenMedias')}
+            bufferConfig={bufferConfig}
+            media={takenMedia}
+            onMediaPress={onMediaPress(takenMedia)}
+            onMediaLongPress={onMediaLongPress}
+          />
+        </ScrollableTabView>
       </View>
     );
   }
