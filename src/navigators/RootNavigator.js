@@ -13,7 +13,7 @@ import { withTranslation } from 'react-i18next';
 
 import Admob from '../dataPresentation/Admob/AdmobScreen';
 import CropPickerHOC from '../dataPresentation/CropPicker/CropPickerHOC';
-import FastImage from '../dataPresentation/FastImage/FastImageScreen';
+import FileSystemHOC from '../dataPresentation/FileSystem/FileSystemHOC';
 import ModalImageViewer from '../dataPresentation/commonComponents/ModalMediaViewer';
 import TabDrawerContainer from '../dataPresentation/TabDrawer/TabDrawerContainer';
 import TabIcon from '../dataPresentation/commonComponents/TabIcon';
@@ -82,11 +82,11 @@ const RootNavigator = (props) => {
                     navigationBarStyle={styles.videoNavigationBarStyle}
                   />
                   <Scene
-                    key="fastImage"
-                    title={t('fastImageTitle')}
-                    component={FastImage}
+                    key="fileSystem"
+                    title={t('fileSystemTitle')}
+                    component={FileSystemHOC}
                     icon={TabIcon}
-                    iconName="collections"
+                    iconName="sd-storage"
                     navigationBarStyle={styles.fastImageNavigationBarStyle}
                   />
                 </Tabs>

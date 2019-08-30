@@ -135,7 +135,7 @@ class TabDrawerScene extends Component {
                 permissions={['email', 'public_profile']}
                 onLoginFinished={(error, result) => {
                   if (error) {
-                    console.log('login has error: ' + result.error);
+                    console.log(`login has error: ${result.error}`);
                   } else if (result.isCancelled) {
                     console.log('login is cancelled.');
                   } else {

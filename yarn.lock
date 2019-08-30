@@ -2010,6 +2010,11 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
   integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
 
+base-64@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/base-64/-/base-64-0.1.0.tgz#780a99c84e7d600260361511c4877613bf24f6bb"
+  integrity sha1-eAqZyE59YAJgNhURxId2E78k9rs=
+
 base64-js@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-0.0.8.tgz#1101e9544f4a76b1bc3b26d452ca96d7a35e7978"
@@ -6240,7 +6245,7 @@ react-lifecycles-compat@^3, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-check-app-install@^0.0.5:
+react-native-check-app-install@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/react-native-check-app-install/-/react-native-check-app-install-0.0.5.tgz#1cd5bff09a7d294af7acc88da627984654cb1b9c"
   integrity sha512-nKUf0HcLbRGlOgSun4w2ftKZsabcwwff4GK//WwdoxG5wstqhWK1231+SKapjJY4GjoM2pI2Xv6ClTQV6e5cog==
@@ -6268,6 +6273,14 @@ react-native-fbsdk@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-native-fbsdk/-/react-native-fbsdk-1.0.2.tgz#ae1dbd5a56be328c465c2326347a4d4e1e599ec6"
   integrity sha512-ZFG9LIReRoZPEA1es8hGBZCSga8NWEXQjmUVYNE/6QSePhMX7o975Ys/29Eqloq1kpHWoY+HJXbfU57SAWAcwg==
+
+react-native-fs@2.14.1:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/react-native-fs/-/react-native-fs-2.14.1.tgz#61c70a865b5b5bcb020dd4e4befd60a2c20c836f"
+  integrity sha512-ZcfiwNP+FBgvv2eRk0B62/NI58mbjszjjYvQlP352HLkUqVsK4Ld6X8fdBO1lZAz6SgitUk8WEc9NEciRIt31g==
+  dependencies:
+    base-64 "^0.1.0"
+    utf8 "^2.1.1"
 
 react-native-grid-component@^2.0.0:
   version "2.0.0"
@@ -7850,6 +7863,11 @@ use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
+
+utf8@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/utf8/-/utf8-2.1.2.tgz#1fa0d9270e9be850d9b05027f63519bf46457d96"
+  integrity sha1-H6DZJw6b6FDZsFAn9jUZv0ZFfZY=
 
 util-deprecate@1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"

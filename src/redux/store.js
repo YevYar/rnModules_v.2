@@ -9,10 +9,17 @@ import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
+import { dirs } from '../services/FileSystemService';
 
 const initState = {
   appState: { language: 'en' },
-  cropPickerState: { domainData: { chosenMedia: [], takenMedia: [] } }
+  cropPickerState: { domainData: { chosenMedia: [], takenMedia: [] } },
+  fileSystemState: {
+    domainData: {
+      currentDirName: 'DocumentDirectoryPath',
+      dirContent: []
+    }
+  }
 };
 
 const saga = createSagaMiddleware();

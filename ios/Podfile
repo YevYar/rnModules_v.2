@@ -40,8 +40,11 @@ target 'rnModules_V2' do
   
   pod 'react-native-twitter-signin', :path => '../node_modules/react-native-twitter-signin'
   
-  # use_frameworks!
   pod 'TwitterKit', '~> 3.3.0'
+  
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+  
+  # use_frameworks!
   
   target 'rnModules_V2Tests' do
     inherit! :search_paths

@@ -28,6 +28,9 @@ export default {
   facebookIsNotInstalledMessage:
     "You need install 'Facebook' app to share photos",
   facebookIsNotInstalledTitle: 'Sharing error',
+  getDirectoryContentErrorMessage:
+    "Sorry, we can't get the content of this directory",
+  getDirectoryContentErrorTitle: 'Error',
 
   // tab drawer buttons
   facebookLoginText: 'Login with Facebook',
@@ -41,7 +44,7 @@ export default {
   // tab titles
   admobTitle: 'Advertisement',
   cropPickerTitle: 'Crop picker',
-  fastImageTitle: 'Fast image',
+  fileSystemTitle: 'File system',
   videoTitle: 'Video',
 
   // touchId

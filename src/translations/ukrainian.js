@@ -28,6 +28,9 @@ export default {
   facebookIsNotInstalledMessage:
     'Вам потрібно встановити додаток "Facebook" для того, щоб мати можливість ділитися фотографіями',
   facebookIsNotInstalledTitle: 'Не вдалося поділитися',
+  getDirectoryContentErrorMessage:
+    'Вибачте, ми не можемо отримати зміст цієї директорії',
+  getDirectoryContentErrorTitle: 'Помилка',
 
   // tab drawer buttons
   facebookLoginText: 'Увійти через Facebook',
@@ -41,7 +44,7 @@ export default {
   // tab titles
   admobTitle: 'Реклама',
   cropPickerTitle: 'Кадрування',
-  fastImageTitle: 'Швидкі зображення',
+  fileSystemTitle: 'Файлова система',
   videoTitle: 'Відео',
 
   // touchId

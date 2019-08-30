@@ -65,7 +65,7 @@ export const logout = () => {
         },
         (error, result) => {
           if (error) {
-            console.log('Error fetching data: ' + error.toString());
+            console.log(`Error fetching data: ${error.toString()}`);
           } else {
             console.log('Result');
             console.log(result);
@@ -114,7 +114,7 @@ export const shareMedia = (uri) => {
 
 const _responseInfoCallback = (error, result) => {
   if (error) {
-    console.log('Error fetching data: ' + error.toString());
+    console.log(`Error fetching data: ${error.toString()}`);
   } else {
     console.log('Success fetching data: ');
     console.log(result);

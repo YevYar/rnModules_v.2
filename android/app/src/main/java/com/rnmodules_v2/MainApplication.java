@@ -7,14 +7,16 @@ import com.facebook.react.PackageList;
 import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
 import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
-import org.devio.rn.splashscreen.SplashScreenReactPackage;
+// import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 
 import java.util.List;
 
-import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+// import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
+
+// import com.rnfs.RNFSPackage;
 
 // import com.magus.fblogin.FacebookLoginPackage;
 
@@ -34,6 +36,7 @@ public class MainApplication extends Application implements ReactApplication {
       // packages.add(new MyReactNativePackage());
       // packages.add(new LocalAuthPackage());
       // packages.add(new FacebookLoginPackage());
+      // packages.add(new RNFSPackage());
       return packages;
     }
 

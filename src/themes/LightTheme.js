@@ -10,7 +10,7 @@ export default {
     primaryColor: '#1ECBE1',
     accentColor: '#E1341E',
     additionalColor: '#961EE1',
-    additionalColor_2: '#6AE11E',
+    additionalColor_2: '#638F3E',
     additionalColor_3: '#1E90FF',
     // text color palette
     primaryTextColor: '#000',

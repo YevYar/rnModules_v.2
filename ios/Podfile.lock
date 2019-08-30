@@ -125,6 +125,8 @@ PODS:
   - React-RCTWebSocket (0.60.4):
     - React-Core (= 0.60.4)
     - React-fishhook (= 0.60.4)
+  - RNFS (2.14.1):
+    - React
   - RNI18n (2.0.15):
     - React
   - RNImageCropPicker (0.25.0):
@@ -172,6 +174,7 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
+  - RNFS (from `../node_modules/react-native-fs`)
   - RNI18n (from `../node_modules/react-native-i18n`)
   - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
@@ -249,6 +252,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   React-RCTWebSocket:
     :path: "../node_modules/react-native/Libraries/WebSocket"
+  RNFS:
+    :path: "../node_modules/react-native-fs"
   RNI18n:
     :path: "../node_modules/react-native-i18n"
   RNImageCropPicker:
@@ -295,6 +300,7 @@ SPEC CHECKSUMS:
   React-RCTText: e0f224898b13af9aa036ea7cb3d438daa68c1044
   React-RCTVibration: 0bea40cd51bd089bd591a8f74c86e91fdf2666c5
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
+  RNFS: a8fbe7060fa49157d819466404794ad9c58e58cf
   RNI18n: e2f7e76389fcc6e84f2c8733ea89b92502351fd8
   RNImageCropPicker: 0a731d984e64ee4c28bddaa7ce52262e4b80979f
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
@@ -305,6 +311,6 @@ SPEC CHECKSUMS:
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
-PODFILE CHECKSUM: 14fa3944442008d70feb32736b66a918e3650a99
+PODFILE CHECKSUM: 3331e440db12298d1a1dd12224d9ce623daacbd9
 
 COCOAPODS: 1.7.4
