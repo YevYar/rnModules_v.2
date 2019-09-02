@@ -17,6 +17,7 @@ const initState = {
   fileSystemState: {
     domainData: {
       currentDirName: 'DocumentDirectoryPath',
+      currentPathInDir: '',
       dirContent: []
     }
   }

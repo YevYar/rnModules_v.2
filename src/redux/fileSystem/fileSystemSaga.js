@@ -13,7 +13,10 @@ import { dirs, getDirContent } from '../../services/FileSystemService';
 
 export function* onDirectoryHasBeenChanged(action) {
   try {
-    const content = yield call(getDirContent, dirs[action.dirName]);
+    const content = yield call(
+      getDirContent,
+      action.dirPath || dirs[action.dirName]
+    );
     yield put(directoryContentHasBeenReceived(content));
   } catch (error) {
     console.log('onDirectoryHasBeenChanged error: ');

@@ -7,7 +7,8 @@
 
 import {
   DIRECTORY_CHANGED,
-  DIRECTORY_CONTENT_RECEIVED
+  DIRECTORY_CONTENT_RECEIVED,
+  PATH_IN_DIRECTORY_CHANGED
 } from './fileSystemActions';
 
 export default (state = {}, action) => {
@@ -17,7 +18,8 @@ export default (state = {}, action) => {
         ...state,
         domainData: {
           ...state.domainData,
-          currentDirName: action.dirName
+          currentDirName: action.dirName,
+          currentPathInDir: ''
         }
       };
 
@@ -27,6 +29,15 @@ export default (state = {}, action) => {
         domainData: {
           ...state.domainData,
           dirContent: action.content
+        }
+      };
+
+    case PATH_IN_DIRECTORY_CHANGED:
+      return {
+        ...state,
+        domainData: {
+          ...state.domainData,
+          currentPathInDir: action.dirPath
         }
       };
 

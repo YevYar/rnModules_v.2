@@ -6,14 +6,21 @@
 
 import FileSystemContainer from './FileSystemContainer';
 import wrapIntoRedux from '../../utils/intoReduxWrapper';
-import { directoryHasBeenChanged } from '../../redux/fileSystem/fileSystemActions';
+import {
+  directoryHasBeenChanged,
+  pathInDirectoryHasBeenChanged
+} from '../../redux/fileSystem/fileSystemActions';
 
 const mapStateToProps = state => ({
   dirContent: state.fileSystemState.domainData.dirContent,
-  dirName: state.fileSystemState.domainData.currentDirName
+  dirName: state.fileSystemState.domainData.currentDirName,
+  pathInDir: state.fileSystemState.domainData.currentPathInDir
 });
 
-const mapDispatchToProps = { directoryHasBeenChanged };
+const mapDispatchToProps = {
+  directoryHasBeenChanged,
+  pathInDirectoryHasBeenChanged
+};
 
 export default wrapIntoRedux(
   FileSystemContainer,

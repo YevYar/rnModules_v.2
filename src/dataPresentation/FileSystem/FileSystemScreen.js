@@ -18,11 +18,14 @@ class FileSystemScreen extends Component {
     dirName: PropTypes.string.isRequired,
     directoryHasBeenChanged: PropTypes.func.isRequired,
     dirs: PropTypes.object.isRequired,
+    isBackFolderLineVisible: PropTypes.bool.isRequired,
     navigation: PropTypes.object.isRequired,
     navigationBarStyle: PropTypes.object.isRequired,
+    onBackFolderPress: PropTypes.func.isRequired,
     onItemLongPress: PropTypes.func.isRequired,
     onItemPress: PropTypes.func.isRequired,
     onItemRemove: PropTypes.func.isRequired,
+    pathInDirectoryHasBeenChanged: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired
   };
 
@@ -33,6 +36,8 @@ class FileSystemScreen extends Component {
       Platform.OS === 'android' &&
         StatusBar.setBackgroundColor(navigationBarStyle.backgroundColor);
     });
+
+    this.props.directoryHasBeenChanged(this.props.dirName);
   }
 
   componentWillUnmount() {
@@ -45,9 +50,12 @@ class FileSystemScreen extends Component {
       dirName,
       directoryHasBeenChanged,
       dirs,
+      isBackFolderLineVisible,
+      onBackFolderPress,
       onItemLongPress,
       onItemPress,
       onItemRemove,
+      pathInDirectoryHasBeenChanged,
       theme
     } = this.props;
 
@@ -73,6 +81,9 @@ class FileSystemScreen extends Component {
             <Picker.Item label={item} value={item} key={item} />
           ))}
         </Picker>
+        {isBackFolderLineVisible ? (
+          <ListItem divider centerElement="..." onPress={onBackFolderPress} />
+        ) : null}
         <FlatList
           data={dirContent}
           keyExtractor={item => item.path}
@@ -82,13 +93,16 @@ class FileSystemScreen extends Component {
               <ListItem
                 divider
                 centerElement={item.name}
+                leftElement={item.isDirectory() ? 'folder' : ''}
                 rightElement="delete"
                 onLongPress={() => {
                   console.log(item.path);
                   console.log(onItemLongPress(item.path));
                 }}
                 onPress={() => {
-                  onItemPress(item.path);
+                  item.isDirectory()
+                    ? pathInDirectoryHasBeenChanged(item.path)
+                    : onItemPress(item.path);
                 }}
                 onRightElementPress={() => {
                   console.log(item.path);
