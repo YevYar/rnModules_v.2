@@ -20,6 +20,9 @@ class FileSystemScreen extends Component {
     dirs: PropTypes.object.isRequired,
     navigation: PropTypes.object.isRequired,
     navigationBarStyle: PropTypes.object.isRequired,
+    onItemLongPress: PropTypes.func.isRequired,
+    onItemPress: PropTypes.func.isRequired,
+    onItemRemove: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired
   };
 
@@ -42,6 +45,9 @@ class FileSystemScreen extends Component {
       dirName,
       directoryHasBeenChanged,
       dirs,
+      onItemLongPress,
+      onItemPress,
+      onItemRemove,
       theme
     } = this.props;
 
@@ -70,9 +76,26 @@ class FileSystemScreen extends Component {
         <FlatList
           data={dirContent}
           keyExtractor={item => item.path}
-          renderItem={(item) => {
+          renderItem={({ item }) => {
             console.log(item);
-            return <ListItem divider centerElement={item.item.name} />;
+            return (
+              <ListItem
+                divider
+                centerElement={item.name}
+                rightElement="delete"
+                onLongPress={() => {
+                  console.log(item.path);
+                  console.log(onItemLongPress(item.path));
+                }}
+                onPress={() => {
+                  onItemPress(item.path);
+                }}
+                onRightElementPress={() => {
+                  console.log(item.path);
+                  // onItemRemove(item.path);
+                }}
+              />
+            );
           }}
         />
       </View>

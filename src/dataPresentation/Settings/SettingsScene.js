@@ -60,7 +60,7 @@ class SettingsScene extends Component {
               onPress={() => {
                 i18n.changeLanguage(this.state.language);
                 languageHasBeenChanged(this.state.language);
-                Actions.pop();
+                // Actions.pop();
               }}
               primary
             />

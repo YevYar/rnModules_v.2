@@ -5,6 +5,7 @@
  */
 
 import React from 'react';
+import { Actions } from 'react-native-router-flux';
 
 import FileSystemScreen from './FileSystemScreen';
 import {
@@ -16,5 +17,19 @@ import {
   writeFile
 } from '../../services/FileSystemService';
 
-/* Screen requires dirContent, dirName, directoryHasBeenChanged, dirs */
-export default props => <FileSystemScreen {...props} dirs={dirs} />;
+const onItemPress = path =>
+  readFileContent(path, (data) => {
+    // console.log(data);
+    Actions.fileContent({ content: data });
+  });
+
+/* Screen requires dirContent, dirName, directoryHasBeenChanged, dirs, onItemRemove, onItemLongPress */
+export default props => (
+  <FileSystemScreen
+    {...props}
+    dirs={dirs}
+    onItemLongPress={getFileInfo}
+    onItemPress={onItemPress}
+    onItemRemove={removeFile}
+  />
+);

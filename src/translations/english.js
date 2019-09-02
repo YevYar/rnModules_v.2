@@ -32,6 +32,14 @@ export default {
     "Sorry, we can't get the content of this directory",
   getDirectoryContentErrorTitle: 'Error',
 
+  // fileSystem
+  aboutFileErrorMessage: "We can't get file info.\nError",
+  aboutFileErrorTitle: 'Error',
+  aboutFileTitle: 'About file',
+  delete: 'Delete',
+  fileContentErrorMessage: "We can't get the file content.\nError",
+  fileContentErrorTitle: 'Error',
+
   // tab drawer buttons
   facebookLoginText: 'Login with Facebook',
   facebookLogoutText: 'Logout from Facebook',

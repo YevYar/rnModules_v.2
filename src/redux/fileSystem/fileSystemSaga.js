@@ -7,7 +7,7 @@
 import { call, put } from 'redux-saga/effects';
 
 import i18next from '../../translations/index';
-import showErrorMessage from '../../utils/showErrorMessage';
+import showMessage from '../../utils/showMessage';
 import { directoryContentHasBeenReceived } from './fileSystemActions';
 import { dirs, getDirContent } from '../../services/FileSystemService';
 
@@ -18,7 +18,7 @@ export function* onDirectoryHasBeenChanged(action) {
   } catch (error) {
     console.log('onDirectoryHasBeenChanged error: ');
     console.log(error);
-    showErrorMessage(
+    showMessage(
       i18next.t('getDirectoryContentErrorTitle'),
       i18next.t('getDirectoryContentErrorMessage')
     );

@@ -14,7 +14,7 @@ import {
 
 import i18next from '../translations/index';
 import isAppInstalled from './InstalledAppsService';
-import showErrorMessage from '../utils/showErrorMessage';
+import showMessage from '../utils/showMessage';
 
 const user = {};
 
@@ -101,7 +101,7 @@ export const shareMedia = (uri) => {
     })
     .catch((error) => {
       console.log(error);
-      showErrorMessage(
+      showMessage(
         i18next.t('facebookIsNotInstalledTitle'),
         i18next.t('facebookIsNotInstalledMessage')
       );

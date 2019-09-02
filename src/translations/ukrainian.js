@@ -32,6 +32,14 @@ export default {
     'Вибачте, ми не можемо отримати зміст цієї директорії',
   getDirectoryContentErrorTitle: 'Помилка',
 
+  // fileSystem
+  aboutFileErrorMessage: 'Ми не можемо отримати дані про файл.\nПомилка',
+  aboutFileErrorTitle: 'Помилка',
+  aboutFileTitle: 'Про файл',
+  delete: 'Видалити',
+  fileContentErrorMessage: 'Ми не можемо отримати вміст файлу.\nПомилка',
+  fileContentErrorTitle: 'Помилка',
+
   // tab drawer buttons
   facebookLoginText: 'Увійти через Facebook',
   facebookLogoutText: 'Вийти з Facebook',

@@ -32,6 +32,14 @@ export default {
     'Извините, мы не можем получить содержание данной директории',
   getDirectoryContentErrorTitle: 'Ошибка',
 
+  // fileSystem
+  aboutFileErrorMessage: 'Не получилось получить данные о файле.\nОшибка',
+  aboutFileErrorTitle: 'Ошибка',
+  aboutFileTitle: 'О файле',
+  delete: 'Удалить',
+  fileContentErrorMessage: 'Не получилось получить содержание файла.\nОшибка',
+  fileContentErrorTitle: 'Ошибка',
+
   // tab drawer buttons
   facebookLoginText: 'Войти через Facebook',
   facebookLogoutText: 'Выйти из Facebook',

@@ -13,6 +13,7 @@ import { withTranslation } from 'react-i18next';
 
 import Admob from '../dataPresentation/Admob/AdmobScreen';
 import CropPickerHOC from '../dataPresentation/CropPicker/CropPickerHOC';
+import FileContentContainer from '../dataPresentation/FileContent/FileContentContainer';
 import FileSystemHOC from '../dataPresentation/FileSystem/FileSystemHOC';
 import ModalImageViewer from '../dataPresentation/commonComponents/ModalMediaViewer';
 import TabDrawerContainer from '../dataPresentation/TabDrawer/TabDrawerContainer';
@@ -102,6 +103,7 @@ const RootNavigator = (props) => {
             component={ModalImageViewer}
             hideNavBar
           />
+          <Scene key="fileContent" title="" component={FileContentContainer} />
         </Modal>
       </Router>
     </View>
