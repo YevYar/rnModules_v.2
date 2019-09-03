@@ -6250,6 +6250,11 @@ react-native-check-app-install@0.0.5:
   resolved "https://registry.yarnpkg.com/react-native-check-app-install/-/react-native-check-app-install-0.0.5.tgz#1cd5bff09a7d294af7acc88da627984654cb1b9c"
   integrity sha512-nKUf0HcLbRGlOgSun4w2ftKZsabcwwff4GK//WwdoxG5wstqhWK1231+SKapjJY4GjoM2pI2Xv6ClTQV6e5cog==
 
+react-native-device-info@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-2.3.2.tgz#db2b8f135aaf2515583e367ab791dcc7d2f0d14c"
+  integrity sha512-ccpPuUbwhw5uYdVwN1UJp6ykMZz6U/u82HNM3oJ7O6MP8RIMlMDkHbqR4O0sDtUSuRMGiqqRzFtmOLFYeQ0ODw==
+
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-dismiss-keyboard/-/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"

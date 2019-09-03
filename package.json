@@ -15,6 +15,7 @@
     "react-i18next": "^10.12.2",
     "react-native": "0.60.4",
     "react-native-check-app-install": "0.0.5",
+    "react-native-device-info": "^2.3.2",
     "react-native-fbsdk": "^1.0.2",
     "react-native-fs": "2.14.1",
     "react-native-grid-component": "^2.0.0",

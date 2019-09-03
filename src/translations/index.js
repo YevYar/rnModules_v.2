@@ -10,20 +10,19 @@ import { initReactI18next } from 'react-i18next';
 import en from './english';
 import ru from './russian';
 import ua from './ukrainian';
+import { getLocale } from '../services/DeviceInfoService';
 
 export const languages = { en: 'English', ru: 'Русский', ua: 'Українська' };
 
 const languageDetector = {
   type: 'languageDetector',
-  async: true,
-  detect: cb => cb('en'),
+  detect: () => getLocale(),
   init: () => {},
   cacheUserLanguage: () => {}
 };
 
 i18next
   .use(languageDetector)
-  // .use(i18nextReactNative)
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
