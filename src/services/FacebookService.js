@@ -43,14 +43,6 @@ export const login = () => {
 };
 
 export const logout = () => {
-  /* CookieManager.getAll().then((res) => {
-    console.log('CookieManager.getAll =>', res);
-    CookieManager.clearAll().then((res) => {
-      console.log('CookieManager.clearAll =>', res);
-      LoginManager.logOut();
-    });
-  }); */
-
   let current_access_token = '';
   AccessToken.getCurrentAccessToken()
     .then((data) => {

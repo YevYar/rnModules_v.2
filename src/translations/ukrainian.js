@@ -39,6 +39,7 @@ export default {
   delete: 'Видалити',
   fileContentErrorMessage: 'Ми не можемо отримати вміст файлу.\nПомилка',
   fileContentErrorTitle: 'Помилка',
+  loading: 'Завантаження...',
 
   // tab drawer buttons
   facebookLoginText: 'Увійти через Facebook',

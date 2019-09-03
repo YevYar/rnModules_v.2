@@ -7,15 +7,14 @@
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 
-const createStyles = (palette) => {
-  const {
-    accentColor,
-    additionalColor_2,
-    additionalColor_3,
-    alternateTextColor,
-    primaryColor
-  } = palette;
-  return StyleSheet.create({
+const createStyles = ({
+  accentColor,
+  additionalColor_2,
+  additionalColor_3,
+  alternateTextColor,
+  primaryColor
+}) =>
+  StyleSheet.create({
     admobNavigationBarStyle: { backgroundColor: accentColor },
     cropPickerNavigationBarStyle: { backgroundColor: primaryColor },
     fastImageNavigationBarStyle: { backgroundColor: additionalColor_2 },
@@ -23,7 +22,6 @@ const createStyles = (palette) => {
     screen: { flex: 1 },
     title: { color: alternateTextColor }
   });
-};
 
 createStyles.propTypes = { palette: PropTypes.object.isRequired };
 

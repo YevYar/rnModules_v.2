@@ -25,5 +25,6 @@ export function* onDirectoryHasBeenChanged(action) {
       i18next.t('getDirectoryContentErrorTitle'),
       i18next.t('getDirectoryContentErrorMessage')
     );
+    yield put(directoryContentHasBeenReceived([]));
   }
 }

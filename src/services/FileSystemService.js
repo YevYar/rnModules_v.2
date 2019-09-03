@@ -67,7 +67,7 @@ export const readFileContent = (
   path,
   callback,
   error = (e) => {
-    console.log('eadFileContent error:');
+    console.log('readFileContent error:');
     console.log(e);
     showMessage(
       i18next.t('fileContentErrorTitle'),
@@ -80,6 +80,3 @@ export const readFileContent = (
     .catch(error);
 
 export const removeFile = path => unlink(path);
-
-export const writeFile = (path, text, encoding) =>
-  writeFile(path, text, encoding);

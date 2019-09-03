@@ -9,10 +9,9 @@ import createSagaMiddleware from 'redux-saga';
 
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
-import { dirs } from '../services/FileSystemService';
 
 const initState = {
-  appState: { language: 'en' },
+  appState: { isLoadingSomething: false, language: 'en' },
   cropPickerState: { domainData: { chosenMedia: [], takenMedia: [] } },
   fileSystemState: {
     domainData: {

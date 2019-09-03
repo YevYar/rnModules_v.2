@@ -39,6 +39,7 @@ export default {
   delete: 'Удалить',
   fileContentErrorMessage: 'Не получилось получить содержание файла.\nОшибка',
   fileContentErrorTitle: 'Ошибка',
+  loading: 'Загрузка...',
 
   // tab drawer buttons
   facebookLoginText: 'Войти через Facebook',

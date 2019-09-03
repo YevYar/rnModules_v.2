@@ -6245,11 +6245,6 @@ react-lifecycles-compat@^3, react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-breadcrumb@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-breadcrumb/-/react-native-breadcrumb-1.0.1.tgz#aafee42c6d7403b268ff2d20e24b9881e7e2a56b"
-  integrity sha512-L1AJTQg8ZoetH1gU3wZ5Ns0J1ZS4k0QEZFmbbETAQ8GTyoZX9XjAVZjOCLMtbNdxk5u4uAwAgN6zR8Aw1Hcfsg==
-
 react-native-check-app-install@0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/react-native-check-app-install/-/react-native-check-app-install-0.0.5.tgz#1cd5bff09a7d294af7acc88da627984654cb1b9c"
@@ -6330,6 +6325,13 @@ react-native-instagram-login@^1.1.1:
   dependencies:
     qs "6.6.0"
     react-native-webview "^5.2.0"
+
+react-native-loading-spinner-overlay@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-1.0.1.tgz#07f85a072b6f7d05b8749668cd626df4cc330347"
+  integrity sha512-njZZWs+cgyq6Ni7tkYEowMmuAuHVljuH4CqTWA0plNOfSzZhEcrW209y7WcgHjRWz0RvvEYF5oWGT8DWtTq8bA==
+  dependencies:
+    prop-types "^15.6.2"
 
 react-native-material-design-styles@^0.2.6:
   version "0.2.7"

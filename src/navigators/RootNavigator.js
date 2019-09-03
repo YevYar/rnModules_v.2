@@ -11,15 +11,15 @@ import { Icon } from 'react-native-material-ui';
 import { StatusBar, View } from 'react-native';
 import { withTranslation } from 'react-i18next';
 
-import Admob from '../dataPresentation/Admob/AdmobScreen';
-import CropPickerHOC from '../dataPresentation/CropPicker/CropPickerHOC';
-import FileContentContainer from '../dataPresentation/FileContent/FileContentContainer';
-import FileSystemHOC from '../dataPresentation/FileSystem/FileSystemHOC';
-import ModalImageViewer from '../dataPresentation/commonComponents/ModalMediaViewer';
-import TabDrawerContainer from '../dataPresentation/TabDrawer/TabDrawerContainer';
-import TabIcon from '../dataPresentation/commonComponents/TabIcon';
-import VideoContainer from '../dataPresentation/Video/VideoContainer';
-import SettingsHOC from '../dataPresentation/Settings/SettingsHOC';
+import Admob from '../screens/Admob/AdmobScreen';
+import CropPickerReduxConnecter from '../screens/CropPicker/CropPickerReduxConnecter';
+import FileContentReduxConnecter from '../screens/FileContent/FileContentReduxConnecter';
+import FileSystemReduxConnecter from '../screens/FileSystem/FileSystemReduxConnecter';
+import ModalImageViewer from '../components/ModalMediaViewer';
+import TabDrawerContainer from '../screens/TabDrawer/TabDrawerContainer';
+import TabIcon from '../components/TabIcon';
+import VideoContainer from '../screens/Video/VideoContainer';
+import SettingsReduxConnecter from '../screens/Settings/SettingsReduxConnecter';
 import createStyles from './styles/RootNavigator.styles';
 import wrapIntoTheme from '../utils/intoThemeWrapper';
 
@@ -61,7 +61,7 @@ const RootNavigator = (props) => {
                   <Scene
                     key="cropPicker"
                     title={t('cropPickerTitle')}
-                    component={CropPickerHOC}
+                    component={CropPickerReduxConnecter}
                     icon={TabIcon}
                     iconName="crop"
                     navigationBarStyle={styles.cropPickerNavigationBarStyle}
@@ -85,7 +85,7 @@ const RootNavigator = (props) => {
                   <Scene
                     key="fileSystem"
                     title={t('fileSystemTitle')}
-                    component={FileSystemHOC}
+                    component={FileSystemReduxConnecter}
                     icon={TabIcon}
                     iconName="sd-storage"
                     navigationBarStyle={styles.fastImageNavigationBarStyle}
@@ -94,7 +94,11 @@ const RootNavigator = (props) => {
               </Scene>
             </Drawer>
 
-            <Scene key="settings" title="Settings" component={SettingsHOC} />
+            <Scene
+              key="settings"
+              title="Settings"
+              component={SettingsReduxConnecter}
+            />
           </Modal>
 
           <Scene
@@ -103,7 +107,11 @@ const RootNavigator = (props) => {
             component={ModalImageViewer}
             hideNavBar
           />
-          <Scene key="fileContent" title="" component={FileContentContainer} />
+          <Scene
+            key="fileContent"
+            title=""
+            component={FileContentReduxConnecter}
+          />
         </Modal>
       </Router>
     </View>

@@ -39,6 +39,7 @@ export default {
   delete: 'Delete',
   fileContentErrorMessage: "We can't get the file content.\nError",
   fileContentErrorTitle: 'Error',
+  loading: 'Loading...',
 
   // tab drawer buttons
   facebookLoginText: 'Login with Facebook',
