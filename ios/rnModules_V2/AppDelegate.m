@@ -15,6 +15,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <RNGoogleSignin/RNGoogleSignin.h>
+@import GoogleMobileAds;
 
 @implementation AppDelegate
 
@@ -35,6 +36,7 @@
   [RNSplashScreen show];
   [[FBSDKApplicationDelegate sharedInstance] application:application
                            didFinishLaunchingWithOptions:launchOptions];
+  [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
   return YES;
 }
 

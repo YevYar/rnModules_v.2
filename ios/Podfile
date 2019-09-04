@@ -44,6 +44,8 @@ target 'rnModules_V2' do
   
   pod 'RNFS', :path => '../node_modules/react-native-fs'
   
+  pod 'Google-Mobile-Ads-SDK'
+  
   # use_frameworks!
   
 

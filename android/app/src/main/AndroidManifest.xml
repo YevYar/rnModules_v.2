@@ -46,6 +46,10 @@
           </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6932923409834639~6724488629"/>
+
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
 
         <provider android:authorities="com.facebook.app.FacebookContentProvider587806821624647"

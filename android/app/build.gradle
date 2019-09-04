@@ -196,6 +196,12 @@ dependencies {
     implementation "com.android.support:appcompat-v7:23.0.1"
     implementation "com.google.android.gms:play-services-auth:16.0.1"
 
+    compile (project(':react-native-admob')) {
+        exclude group: "com.google.android.gms"
+    }
+    implementation 'com.google.android.gms:play-services-ads:18.2.0'
+
+
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";
       debugImplementation files(hermesPath + "hermes-debug.aar")
