@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint src/**"
+    "lint": "eslint src/**",
+    "postinstall": "npx jetify"
   },
   "dependencies": {
     "@react-native-community/slider": "^2.0.0",
@@ -18,6 +19,7 @@
     "react-native-device-info": "^2.3.2",
     "react-native-fbsdk": "^1.0.2",
     "react-native-fs": "2.14.1",
+    "react-native-google-signin": "^2.0.0",
     "react-native-grid-component": "^2.0.0",
     "react-native-i18n": "^2.0.15",
     "react-native-image-crop-picker": "^0.25.0",
@@ -53,6 +55,7 @@
     "eslint-plugin-react": "7.6.1",
     "eslint-plugin-react-native": "3.2.1",
     "jest": "24.5.0",
+    "jetifier": "^1.6.4",
     "metro-react-native-babel-preset": "0.53.1",
     "react-test-renderer": "16.8.3",
     "rnpm": "1.9.0"

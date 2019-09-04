@@ -25,15 +25,22 @@ const createStyles = (
       width: 155
     },
     facebookButton: {
-      height: 40,
+      height: 37,
       marginLeft: Platform.OS === 'android' ? 2 : 0,
       overflow: 'hidden',
       width: Platform.OS === 'android' ? '98%' : null
+    },
+    googleButton: {
+      marginBottom: 8,
+      marginLeft: Platform.OS === 'android' ? -2 : 0,
+      marginTop: -10,
+      width: Platform.OS === 'android' ? 220 : null
     },
     loginButton: {
       borderColor: tabDrawerIconsTextColor,
       borderRadius: 7,
       borderWidth: 2,
+      height: 48,
       marginBottom: 10
     },
     loginButtonText: {

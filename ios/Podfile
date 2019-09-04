@@ -47,6 +47,8 @@ target 'rnModules_V2' do
   # use_frameworks!
   
 
+  pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
+
   target 'rnModules_V2Tests' do
     inherit! :search_paths
     # Pods for testing

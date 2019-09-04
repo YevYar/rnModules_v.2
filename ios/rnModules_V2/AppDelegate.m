@@ -14,6 +14,7 @@
 #import <TwitterKit/TWTRKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <RNGoogleSignin/RNGoogleSignin.h>
 
 @implementation AppDelegate
 
@@ -39,15 +40,16 @@
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
   
-  if([[FBSDKApplicationDelegate sharedInstance] application:app
-                                                                openURL:url
-                                                      sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
-                                                             annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
-                  ])
-  return YES;
+  if([[FBSDKApplicationDelegate sharedInstance] application:app openURL:url                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+              annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+  ])
+    return YES;
   
   if([[Twitter sharedInstance] application:app openURL:url options:options])
-  return YES;
+    return YES;
+  
+  if([RNGoogleSignin application:app openURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey] annotation:options[UIApplicationOpenURLOptionsAnnotationKey]])
+    return YES;
   
   return NO;
 }

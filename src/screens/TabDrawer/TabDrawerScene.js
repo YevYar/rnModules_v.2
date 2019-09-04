@@ -18,6 +18,7 @@ import {
   Text,
   View
 } from 'react-native';
+import { GoogleSigninButton } from 'react-native-google-signin';
 import { LoginButton } from 'react-native-fbsdk';
 import { withTranslation } from 'react-i18next';
 
@@ -148,18 +149,13 @@ class TabDrawerScene extends Component {
                   </Text>
                 </Icon.Button>
               </View>
-              <View style={styles.loginButton}>
-                <Icon.Button
-                  name="google"
-                  backgroundColor={googleColor}
-                  borderRadius={5}
-                  onPress={() => Alert.alert('google')}
-                >
-                  <Text style={styles.loginButtonText}>
-                    {t('googleLoginText')}
-                  </Text>
-                </Icon.Button>
-              </View>
+
+              <GoogleSigninButton
+                style={{ ...styles.loginButton, ...styles.googleButton }}
+                size={GoogleSigninButton.Size.Standard}
+                color={GoogleSigninButton.Color.Dark}
+                onPress={() => null}
+              />
 
               <InstagramLogin
                 ref={ref => (this.instagramLogin = ref)}
