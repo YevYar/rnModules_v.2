@@ -6311,10 +6311,9 @@ react-native-grid-component@2.0.0:
   dependencies:
     prop-types "^15.5.10"
 
-react-native-i18n@2.0.15:
+"react-native-i18n@git+https://github.com/lemankk/react-native-i18n.git#e870017bd93c9b2e3762ae83a2db3de8c4257146":
   version "2.0.15"
-  resolved "https://registry.yarnpkg.com/react-native-i18n/-/react-native-i18n-2.0.15.tgz#09b5a9836116fa7dbd0054c46e2d1014c1ef3c65"
-  integrity sha512-V8VwUP0TLda3oJvgt5tdnFaOV7WXPhTjCTLO7sXI3C2SHggSbD4bCUryMzNJhesimJidH21V2Owvj4zAylHoQQ==
+  resolved "git+https://github.com/lemankk/react-native-i18n.git#e870017bd93c9b2e3762ae83a2db3de8c4257146"
   dependencies:
     i18n-js "3.0.11"
 

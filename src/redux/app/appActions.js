@@ -13,6 +13,6 @@ export const languageHasBeenChanged = newLanguage => ({
   newLanguage
 });
 
-export const loadingHasBeenFinished = () => ({type: LOADING_HAS_BEEN_FINISHED});
+export const loadingHasBeenFinished = () => ({ type: LOADING_HAS_BEEN_FINISHED });
 
 export const loadingHasBeenStarted = () => ({ type: LOADING_HAS_BEEN_STARTED });

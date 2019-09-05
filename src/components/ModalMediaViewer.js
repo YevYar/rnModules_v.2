@@ -45,7 +45,7 @@ class ModalImageViewer extends Component {
   };
 
   changeHeaderVisibility() {
-    this.setState(prevState => ({isHeaderVisible: !prevState.isHeaderVisible}));
+    this.setState(prevState => ({ isHeaderVisible: !prevState.isHeaderVisible }));
   }
 
   _renderImg(data, pathsMimes) {
@@ -85,10 +85,10 @@ class ModalImageViewer extends Component {
         uri:
           "http://www.archive.org/download/MickeyMouse-RunawayTrain/Film-42.mp4"
       } */
-      // } // Can be a URL or a local file.
-      // poster="http://images.pexels.com/medias/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-      // bufferConfig={this.props.bufferConfig}
-      /* muted={this.state.muted}
+    // } // Can be a URL or a local file.
+    // poster="http://images.pexels.com/medias/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    // bufferConfig={this.props.bufferConfig}
+    /* muted={this.state.muted}
           paused={this.state.muted}
           // paused
           resizeMode="contain"
