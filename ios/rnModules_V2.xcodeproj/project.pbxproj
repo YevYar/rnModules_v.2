@@ -214,22 +214,6 @@
 		13B07FAE1A68108700A75B9A /* rnModules_V2 */ = {
 			isa = PBXGroup;
 			children = (
-				36AC271E2320EF8D00D38EF3 /* RCTConvert+GADAdSize.h */,
-				36AC27222320EF8D00D38EF3 /* RCTConvert+GADAdSize.m */,
-				36AC27192320EF8D00D38EF3 /* RNAdMobInterstitial.h */,
-				36AC27232320EF8D00D38EF3 /* RNAdMobInterstitial.m */,
-				36AC271B2320EF8D00D38EF3 /* RNAdMobRewarded.h */,
-				36AC271F2320EF8D00D38EF3 /* RNAdMobRewarded.m */,
-				36AC271C2320EF8D00D38EF3 /* RNAdMobUtils.h */,
-				36AC27182320EF8D00D38EF3 /* RNAdMobUtils.m */,
-				36AC27262320EF8D00D38EF3 /* RNDFPBannerView.h */,
-				36AC27242320EF8D00D38EF3 /* RNDFPBannerView.m */,
-				36AC27252320EF8D00D38EF3 /* RNDFPBannerViewManager.h */,
-				36AC27212320EF8D00D38EF3 /* RNDFPBannerViewManager.m */,
-				36AC271D2320EF8D00D38EF3 /* RNGADBannerView.h */,
-				36AC271A2320EF8D00D38EF3 /* RNGADBannerView.m */,
-				36AC27202320EF8D00D38EF3 /* RNGADBannerViewManager.h */,
-				36AC27272320EF8D00D38EF3 /* RNGADBannerViewManager.m */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				3674B76A231FA5D9008F141C /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -266,6 +250,29 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		36AC27352320FC8700D38EF3 /* react-native-admob */ = {
+			isa = PBXGroup;
+			children = (
+				36AC271E2320EF8D00D38EF3 /* RCTConvert+GADAdSize.h */,
+				36AC27222320EF8D00D38EF3 /* RCTConvert+GADAdSize.m */,
+				36AC27192320EF8D00D38EF3 /* RNAdMobInterstitial.h */,
+				36AC27232320EF8D00D38EF3 /* RNAdMobInterstitial.m */,
+				36AC271B2320EF8D00D38EF3 /* RNAdMobRewarded.h */,
+				36AC271F2320EF8D00D38EF3 /* RNAdMobRewarded.m */,
+				36AC271C2320EF8D00D38EF3 /* RNAdMobUtils.h */,
+				36AC27182320EF8D00D38EF3 /* RNAdMobUtils.m */,
+				36AC27262320EF8D00D38EF3 /* RNDFPBannerView.h */,
+				36AC27242320EF8D00D38EF3 /* RNDFPBannerView.m */,
+				36AC27252320EF8D00D38EF3 /* RNDFPBannerViewManager.h */,
+				36AC27212320EF8D00D38EF3 /* RNDFPBannerViewManager.m */,
+				36AC271D2320EF8D00D38EF3 /* RNGADBannerView.h */,
+				36AC271A2320EF8D00D38EF3 /* RNGADBannerView.m */,
+				36AC27202320EF8D00D38EF3 /* RNGADBannerViewManager.h */,
+				36AC27272320EF8D00D38EF3 /* RNGADBannerViewManager.m */,
+			);
+			name = "react-native-admob";
+			sourceTree = "<group>";
+		};
 		43A6FF8948F7BA50EBF0E842 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +291,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				36AC27352320FC8700D38EF3 /* react-native-admob */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -940,7 +948,6 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/TwitterCore/iOS\"",
 					"\"${PODS_ROOT}/TwitterKit/iOS\"",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.framework/Headers\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -977,10 +984,6 @@
 					"\"${PODS_ROOT}/Headers/Public/react-native-video\"",
 					"\"${PODS_ROOT}/Headers/Public/react-native-webview\"",
 					"\"${PODS_ROOT}/Headers/Public/yoga\"",
-					"$(ROOT)/Users/evgenijaremcenko⁩/projects⁩/rnModules_V2/node_modules/react-native-facebook-login/RCTFBLogin/**",
-					"$(SRCROOT)/../node_modules/react-native-admob/ios",
-					"\"${SRCROOT}/../node_modules/react-native-admob/ios\"",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.framework/Headers\"",
 				);
 				INFOPLIST_FILE = rnModules_V2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1009,7 +1012,6 @@
 					"$(inherited)",
 					"\"${PODS_ROOT}/TwitterCore/iOS\"",
 					"\"${PODS_ROOT}/TwitterKit/iOS\"",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.framework/Headers\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1046,10 +1048,6 @@
 					"\"${PODS_ROOT}/Headers/Public/react-native-video\"",
 					"\"${PODS_ROOT}/Headers/Public/react-native-webview\"",
 					"\"${PODS_ROOT}/Headers/Public/yoga\"",
-					"$(ROOT)/Users/evgenijaremcenko⁩/projects⁩/rnModules_V2/node_modules/react-native-facebook-login/RCTFBLogin/**",
-					"$(SRCROOT)/../node_modules/react-native-admob/ios",
-					"\"${SRCROOT}/../node_modules/react-native-admob/ios\"",
-					"\"${PODS_ROOT}/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.framework/Headers\"",
 				);
 				INFOPLIST_FILE = rnModules_V2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
