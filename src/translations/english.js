@@ -37,6 +37,7 @@ export default {
   aboutFileErrorTitle: 'Error',
   aboutFileTitle: 'About file',
   delete: 'Delete',
+  downloadFile: 'Just download something =)',
   fileContentErrorMessage: "We can't get the file content.\nError",
   fileContentErrorTitle: 'Error',
   loading: 'Loading...',

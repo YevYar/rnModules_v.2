@@ -9,6 +9,7 @@ import React from 'react';
 import { Actions } from 'react-native-router-flux';
 
 import FileSystemScreen from './FileSystemScreen';
+import { downloadFile } from '../../services/FetchBlobService';
 import {
   dirs,
   getFileInfo,
@@ -56,6 +57,7 @@ const FileSystemContainer = ({
       {...props}
       dirName={dirName}
       dirs={dirs}
+      downloadSomething={downloadFile}
       isBackFolderLineVisible={
         pathInDir !== '' && // if we change the main folder (folders from picker), we have empty pathInDir. So we don't need show '...'
         /**

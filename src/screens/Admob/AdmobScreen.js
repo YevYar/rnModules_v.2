@@ -6,12 +6,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  AdMobBanner,
-  AdMobInterstitial,
-  AdMobRewarded,
-  PublisherBanner
-} from 'react-native-admob';
+import { AdMobBanner } from 'react-native-admob';
 import { Platform, StatusBar, View } from 'react-native';
 
 export default class AdmobScreen extends Component {
@@ -37,7 +32,7 @@ export default class AdmobScreen extends Component {
     return (
       <View>
         <AdMobBanner
-          adSize="fullBanner"
+          adSize="largeBanner"
           adUnitID="ca-app-pub-3940256099942544/6300978111"
           testDevices={[AdMobBanner.simulatorId]}
           onAdFailedToLoad={error => console.log(error)}

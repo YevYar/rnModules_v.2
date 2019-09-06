@@ -37,6 +37,7 @@ export default {
   aboutFileErrorTitle: 'Помилка',
   aboutFileTitle: 'Про файл',
   delete: 'Видалити',
+  downloadFile: 'Лише заванатаж дещо =)',
   fileContentErrorMessage: 'Ми не можемо отримати вміст файлу.\nПомилка',
   fileContentErrorTitle: 'Помилка',
   loading: 'Завантаження...',

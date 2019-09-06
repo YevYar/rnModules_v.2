@@ -7,8 +7,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Spinner from 'react-native-loading-spinner-overlay';
+import { Button, ListItem } from 'react-native-material-ui';
 import { FlatList, Picker, Platform, StatusBar, View } from 'react-native';
-import { ListItem } from 'react-native-material-ui';
 import { withTranslation } from 'react-i18next';
 
 import createStyles from './FileSystem.styles';
@@ -20,6 +20,7 @@ class FileSystemScreen extends Component {
     dirName: PropTypes.string.isRequired,
     directoryHasBeenChanged: PropTypes.func.isRequired,
     dirs: PropTypes.object.isRequired,
+    downloadSomething: PropTypes.func.isRequired,
     isBackFolderLineVisible: PropTypes.bool.isRequired,
     isLoadingSomething: PropTypes.bool.isRequired,
     navigation: PropTypes.object.isRequired,
@@ -84,6 +85,7 @@ class FileSystemScreen extends Component {
       dirName,
       directoryHasBeenChanged,
       dirs,
+      downloadSomething,
       isBackFolderLineVisible,
       isLoadingSomething,
       onBackFolderPress,
@@ -97,6 +99,12 @@ class FileSystemScreen extends Component {
 
     return (
       <View style={styles.screen}>
+        <Button
+          text={t('downloadFile')}
+          accent
+          raised
+          onPress={downloadSomething}
+        />
         <Picker
           selectedValue={dirName}
           style={styles.dirPicker}

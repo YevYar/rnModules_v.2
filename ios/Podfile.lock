@@ -2,15 +2,15 @@ PODS:
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
   - DVAssetLoaderDelegate (0.3.3)
-  - FBSDKCoreKit (5.4.1):
-    - FBSDKCoreKit/Basics (= 5.4.1)
-    - FBSDKCoreKit/Core (= 5.4.1)
-  - FBSDKCoreKit/Basics (5.4.1)
-  - FBSDKCoreKit/Core (5.4.1):
+  - FBSDKCoreKit (5.5.0):
+    - FBSDKCoreKit/Basics (= 5.5.0)
+    - FBSDKCoreKit/Core (= 5.5.0)
+  - FBSDKCoreKit/Basics (5.5.0)
+  - FBSDKCoreKit/Core (5.5.0):
     - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (5.4.1):
+  - FBSDKLoginKit (5.5.0):
     - FBSDKCoreKit (~> 5.0)
-  - FBSDKShareKit (5.4.1):
+  - FBSDKShareKit (5.5.0):
     - FBSDKCoreKit (~> 5.0)
   - Folly (2018.10.22.00):
     - boost-for-react-native
@@ -167,6 +167,8 @@ PODS:
   - React-RCTWebSocket (0.60.4):
     - React-Core (= 0.60.4)
     - React-fishhook (= 0.60.4)
+  - rn-fetch-blob (0.10.16):
+    - React-Core
   - RNDeviceInfo (2.3.2):
     - React
   - RNFS (2.14.1):
@@ -222,6 +224,7 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
+  - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
   - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNFS (from `../node_modules/react-native-fs`)
   - RNGoogleSignin (from `../node_modules/react-native-google-signin`)
@@ -309,6 +312,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   React-RCTWebSocket:
     :path: "../node_modules/react-native/Libraries/WebSocket"
+  rn-fetch-blob:
+    :path: "../node_modules/rn-fetch-blob"
   RNDeviceInfo:
     :path: "../node_modules/react-native-device-info"
   RNFS:
@@ -330,9 +335,9 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   DVAssetLoaderDelegate: 0caec20e4e08b8560b691131539e9180024d4bce
-  FBSDKCoreKit: 5144671077d67f07d7d243dbc7fd57a171f73954
-  FBSDKLoginKit: ff38b353b6843353f090028eb1b895c78aa82796
-  FBSDKShareKit: dfea6d7a3683672fd8e50f453eaa754f922bf2b8
+  FBSDKCoreKit: 7ade9cfea30eef2f6cf105a1aa904f89ea68fb7d
+  FBSDKLoginKit: bb28062f24e79590c44ba03297ca9bea4b6436d2
+  FBSDKShareKit: 6316a2dcd2fbc419c87281aa4c50ad0b6ed431e7
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
   Google-Mobile-Ads-SDK: df315e371b29cf935f7ea872e7bdec39462a100e
@@ -368,6 +373,7 @@ SPEC CHECKSUMS:
   React-RCTText: e0f224898b13af9aa036ea7cb3d438daa68c1044
   React-RCTVibration: 0bea40cd51bd089bd591a8f74c86e91fdf2666c5
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
+  rn-fetch-blob: 651b8d076b43d0d7aa294a3d9ec16c00aab8bef9
   RNDeviceInfo: 17e34f6dd902f08d88cbe2c0b7a01be948d43641
   RNFS: a8fbe7060fa49157d819466404794ad9c58e58cf
   RNGoogleSignin: d030c6c6591db24c3cee649f64c7babf0a1699a0
@@ -381,6 +387,6 @@ SPEC CHECKSUMS:
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
-PODFILE CHECKSUM: 3756449dd212c2def2af73282e024a5e9efdece9
+PODFILE CHECKSUM: 098e9bc567202e47da036b621be063ca397b0722
 
 COCOAPODS: 1.7.4

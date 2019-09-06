@@ -37,6 +37,7 @@ export default {
   aboutFileErrorTitle: 'Ошибка',
   aboutFileTitle: 'О файле',
   delete: 'Удалить',
+  downloadFile: 'Просто загрузи что-то =)',
   fileContentErrorMessage: 'Не получилось получить содержание файла.\nОшибка',
   fileContentErrorTitle: 'Ошибка',
   loading: 'Загрузка...',
