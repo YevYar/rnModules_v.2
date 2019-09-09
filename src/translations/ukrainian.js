@@ -41,6 +41,7 @@ export default {
   fileContentErrorMessage: 'Ми не можемо отримати вміст файлу.\nПомилка',
   fileContentErrorTitle: 'Помилка',
   loading: 'Завантаження...',
+  openIn_rnModules: 'Відкрити у rnModules',
 
   // tab drawer buttons
   facebookLoginText: 'Увійти через Facebook',

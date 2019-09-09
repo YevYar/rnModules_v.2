@@ -7,6 +7,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Actions } from 'react-native-router-flux';
+import { Linking } from 'react-native';
 
 import FileSystemScreen from './FileSystemScreen';
 import { downloadFile } from '../../services/FetchBlobService';
@@ -20,7 +21,7 @@ import i18next from '../../translations/index';
 import showMessage from '../../utils/showMessage';
 
 /* Screen requires dirContent, dirName, directoryHasBeenChanged, dirs, isBackFolderLineVisible, isLoadingSomething,
-navigation, navigationBarStyle, onBackFolderPress, onItemLongPress, onItemPress, onItemRemove, pathInDirectoryHasBeenChanged */
+navigation, navigationBarStyle, onBackFolderPress, onItemLongPress, onItemPress, onItemRemove, openIn_rnModules, pathInDirectoryHasBeenChanged */
 const FileSystemContainer = ({
   dirName,
   loadingHasBeenFinished,
@@ -52,6 +53,10 @@ const FileSystemContainer = ({
     );
   };
 
+  const openIn_rnModules = () => {
+    Linking.openURL('rnmodules://products/1');
+  };
+
   return (
     <FileSystemScreen
       {...props}
@@ -73,6 +78,7 @@ const FileSystemContainer = ({
       onItemLongPress={getFileInfo}
       onItemPress={onItemPress}
       onItemRemove={removeFile}
+      openIn_rnModules={openIn_rnModules}
       pathInDirectoryHasBeenChanged={pathInDirectoryHasBeenChanged}
     />
   );

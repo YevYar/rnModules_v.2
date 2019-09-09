@@ -4,15 +4,15 @@
  * @format
  */
 
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Spinner from 'react-native-loading-spinner-overlay';
-import { Button, ListItem } from 'react-native-material-ui';
-import { FlatList, Picker, Platform, StatusBar, View } from 'react-native';
-import { withTranslation } from 'react-i18next';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Spinner from "react-native-loading-spinner-overlay";
+import { Button, ListItem } from "react-native-material-ui";
+import { FlatList, Picker, Platform, StatusBar, View } from "react-native";
+import { withTranslation } from "react-i18next";
 
-import createStyles from './FileSystem.styles';
-import intoThemeWrapper from '../../utils/intoThemeWrapper';
+import createStyles from "./FileSystem.styles";
+import intoThemeWrapper from "../../utils/intoThemeWrapper";
 
 class FileSystemScreen extends Component {
   static propTypes = {
@@ -29,6 +29,7 @@ class FileSystemScreen extends Component {
     onItemLongPress: PropTypes.func.isRequired,
     onItemPress: PropTypes.func.isRequired,
     onItemRemove: PropTypes.func.isRequired,
+    openIn_rnModules: PropTypes.func.isRequired,
     pathInDirectoryHasBeenChanged: PropTypes.func.isRequired,
     t: PropTypes.func.isRequired,
     theme: PropTypes.object.isRequired
@@ -36,9 +37,9 @@ class FileSystemScreen extends Component {
 
   componentDidMount() {
     const { navigation, navigationBarStyle } = this.props;
-    this._navListener = navigation.addListener('didFocus', () => {
-      StatusBar.setBarStyle('light-content');
-      Platform.OS === 'android' &&
+    this._navListener = navigation.addListener("didFocus", () => {
+      StatusBar.setBarStyle("light-content");
+      Platform.OS === "android" &&
         StatusBar.setBackgroundColor(navigationBarStyle.backgroundColor);
     });
 
@@ -61,7 +62,7 @@ class FileSystemScreen extends Component {
       <ListItem
         divider
         centerElement={item.name}
-        leftElement={item.isDirectory() ? 'folder' : ''}
+        leftElement={item.isDirectory() ? "folder" : ""}
         rightElement="delete"
         onLongPress={() => {
           console.log(onItemLongPress(item.path));
@@ -89,6 +90,7 @@ class FileSystemScreen extends Component {
       isBackFolderLineVisible,
       isLoadingSomething,
       onBackFolderPress,
+      openIn_rnModules,
       t,
       theme
     } = this.props;
@@ -100,7 +102,13 @@ class FileSystemScreen extends Component {
     return (
       <View style={styles.screen}>
         <Button
-          text={t('downloadFile')}
+          text={t("openIn_rnModules")}
+          accent
+          raised
+          onPress={openIn_rnModules}
+        />
+        <Button
+          text={t("downloadFile")}
           accent
           raised
           onPress={downloadSomething}
@@ -127,7 +135,7 @@ class FileSystemScreen extends Component {
 
         <Spinner
           visible={isLoadingSomething}
-          textContent={t('loading')}
+          textContent={t("loading")}
           textStyle={styles.spinnerTextStyle}
         />
       </View>

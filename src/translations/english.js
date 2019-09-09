@@ -41,6 +41,7 @@ export default {
   fileContentErrorMessage: "We can't get the file content.\nError",
   fileContentErrorTitle: 'Error',
   loading: 'Loading...',
+  openIn_rnModules: 'Open in rnModules',
 
   // tab drawer buttons
   facebookLoginText: 'Login with Facebook',
