@@ -11,11 +11,13 @@ const createStyles = ({
   accentColor,
   additionalColor_2,
   additionalColor_3,
+  additionalColor_4,
   alternateTextColor,
   primaryColor
 }) =>
   StyleSheet.create({
     admobNavigationBarStyle: { backgroundColor: accentColor },
+    chatNavigationBarStyle: { backgroundColor: additionalColor_4 },
     cropPickerNavigationBarStyle: { backgroundColor: primaryColor },
     fastImageNavigationBarStyle: { backgroundColor: additionalColor_2 },
     videoNavigationBarStyle: { backgroundColor: additionalColor_3 },

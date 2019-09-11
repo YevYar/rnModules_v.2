@@ -12,6 +12,7 @@ export default {
     additionalColor: '#961EE1',
     additionalColor_2: '#638F3E',
     additionalColor_3: '#1E90FF',
+    additionalColor_4: '#9E90BF',
     // text color palette
     primaryTextColor: '#000',
     secondaryTextColor: 'rgba(0, 0, 0, 0.54)',

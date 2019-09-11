@@ -12,6 +12,7 @@ import { StatusBar, View } from 'react-native';
 import { withTranslation } from 'react-i18next';
 
 import Admob from '../screens/Admob/AdmobScreen';
+import ChatScreen from '../screens/Chat/ChatScreen';
 import CropPickerReduxConnecter from '../screens/CropPicker/CropPickerReduxConnecter';
 import FileContentReduxConnecter from '../screens/FileContent/FileContentReduxConnecter';
 import FileSystemReduxConnecter from '../screens/FileSystem/FileSystemReduxConnecter';
@@ -89,6 +90,14 @@ const RootNavigator = (props) => {
                     icon={TabIcon}
                     iconName="sd-storage"
                     navigationBarStyle={styles.fastImageNavigationBarStyle}
+                  />
+                  <Scene
+                    key="chat"
+                    title={t('chatTitle')}
+                    component={ChatScreen}
+                    icon={TabIcon}
+                    iconName="chat"
+                    navigationBarStyle={styles.chatNavigationBarStyle}
                   />
                 </Tabs>
               </Scene>

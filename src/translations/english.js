@@ -54,6 +54,7 @@ export default {
 
   // tab titles
   admobTitle: 'Advertisement',
+  chatTitle: 'Chat',
   cropPickerTitle: 'Crop picker',
   fileSystemTitle: 'File system',
   videoTitle: 'Video',

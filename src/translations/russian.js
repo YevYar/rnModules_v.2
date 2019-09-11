@@ -54,6 +54,7 @@ export default {
 
   // tab titles
   admobTitle: 'Реклама',
+  chatTitle: 'Чат',
   cropPickerTitle: 'Кадрирование',
   fileSystemTitle: 'Файловая система',
   videoTitle: 'Видео',
