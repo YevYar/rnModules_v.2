@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint src/**",
+    "lint": "node --max_old_space_size=4096 ./node_modules/eslint/bin/eslint.js src/** --fix",
     "postinstall": "npx jetify"
   },
   "dependencies": {
