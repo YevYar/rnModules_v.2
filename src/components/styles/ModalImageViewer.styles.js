@@ -4,8 +4,8 @@
  * @format
  */
 
-import PropTypes from 'prop-types';
-import { StyleSheet } from 'react-native';
+import PropTypes from "prop-types";
+import { StyleSheet } from "react-native";
 
 const createStyles = ({
   navigationElementsColor,
@@ -14,32 +14,35 @@ const createStyles = ({
 }) =>
   StyleSheet.create({
     arrowBack: { color: navigationElementsColor },
-    image: { flex: 1, borderWidth: 2, borderColor: 'red' },
-    imgViewer: { flex: 1, overflow: 'visible' },
+    image: { flex: 1, borderWidth: 2, borderColor: "red" },
+    imgViewer: { flex: 1, overflow: "visible" },
     navBar: {
-      alignItems: 'flex-start',
+      alignItems: "flex-start",
       backgroundColor: mediaPreviewColorHeader,
       bottom: 0,
       height: 80,
       left: 0,
       paddingTop: 45,
       right: 0,
-      position: 'absolute',
+      position: "absolute",
       top: 0,
       zIndex: 1
     },
+    playButton: { color: navigationElementsColor, fontSize: 30 },
+    playButtonContainer: { left: "50%", position: "absolute", top: "50%" },
     screen: {
       backgroundColor: mediaPreviewColor,
       flex: 1,
-      flexDirection: 'column',
-      justifyContent: 'flex-start'
+      flexDirection: "column",
+      justifyContent: "flex-start"
     },
     title: {
-      alignSelf: 'center',
+      alignSelf: "center",
       color: navigationElementsColor,
       fontSize: 17,
       marginTop: -28
-    }
+    },
+    videoPrevWrapper: { flex: 1 }
   });
 
 createStyles.propTypes = { palette: PropTypes.object.isRequired };

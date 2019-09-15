@@ -4,12 +4,12 @@
  * @format
  */
 
-import ImageViewer from 'react-native-image-zoom-viewer';
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import Video from 'react-native-video';
-import { Actions } from 'react-native-router-flux';
-import { Button } from 'react-native-material-ui';
+import ImageViewer from "react-native-image-zoom-viewer";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import Video from "react-native-video";
+import { Actions } from "react-native-router-flux";
+import { Button } from "react-native-material-ui";
 import {
   Dimensions,
   Image,
@@ -18,11 +18,11 @@ import {
   SafeAreaView,
   Text,
   View
-} from 'react-native';
+} from "react-native";
 
-import VideoPlayer from './VideoPlayer';
-import createStyles from './styles/ModalImageViewer.styles';
-import intoThemeWrapper from '../utils/intoThemeWrapper';
+import VideoPlayer from "./VideoPlayer";
+import createStyles from "./styles/ModalImageViewer.styles";
+import intoThemeWrapper from "../utils/intoThemeWrapper";
 
 class ModalImageViewer extends Component {
   static propTypes = {
@@ -45,25 +45,40 @@ class ModalImageViewer extends Component {
   };
 
   changeHeaderVisibility() {
-    this.setState(prevState => ({ isHeaderVisible: !prevState.isHeaderVisible }));
+    this.setState(prevState => ({
+      isHeaderVisible: !prevState.isHeaderVisible
+    }));
   }
 
   _renderImg(data, pathsMimes) {
-    console.log('item');
-    const accessibleHeight = Dimensions.get('window').height;
-    const accessibleWidth = Dimensions.get('window').width;
+    console.log("item");
+    const accessibleHeight = Dimensions.get("window").height;
+    const accessibleWidth = Dimensions.get("window").width;
     console.log(accessibleHeight);
     console.log(accessibleWidth);
     // accessibleHeight -= 200;
-    const marginTop = Platform.OS === 'android' ? 10 : -accessibleHeight / 2;
+    const marginTop = Platform.OS === "android" ? 10 : -accessibleHeight / 2;
     // accessibleWidth -= 75;
     // console.log(data);
     const { source, style } = data;
-    if (pathsMimes[source.uri].includes('video')) console.log(this.state);
-    return pathsMimes[source.uri].includes('image') ? (
+    if (pathsMimes[source.uri].includes("video")) console.log(this.state);
+    return pathsMimes[source.uri].includes("image") ? (
       <Image source={{ uri: source.uri }} style={style} />
     ) : (
-      <VideoPlayer
+      <View style={this.styles.videoPrevWrapper}>
+        <Image source={{ uri: source.uri }} style={style} />
+        <Button
+          icon="play"
+          text=""
+          onPress={() => alert("hello")}
+          style={{
+            container: this.styles.playButtonContainer,
+            text: this.styles.playButton
+          }}
+        />
+      </View>
+
+      /* <VideoPlayer
         uri={source.uri}
         accessibleHeight={accessibleHeight}
         accessibleWidth={accessibleWidth}
@@ -85,10 +100,10 @@ class ModalImageViewer extends Component {
         uri:
           "http://www.archive.org/download/MickeyMouse-RunawayTrain/Film-42.mp4"
       } */
-    // } // Can be a URL or a local file.
-    // poster="http://images.pexels.com/medias/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-    // bufferConfig={this.props.bufferConfig}
-    /* muted={this.state.muted}
+      // } // Can be a URL or a local file.
+      // poster="http://images.pexels.com/medias/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+      // bufferConfig={this.props.bufferConfig}
+      /* muted={this.state.muted}
           paused={this.state.muted}
           // paused
           resizeMode="contain"
@@ -148,10 +163,10 @@ class ModalImageViewer extends Component {
           backgroundColor="transparent"
           renderIndicator={() => null}
           style={this.styles.imgViewer}
-          onChange={(index) => {
-            console.log('onChange');
+          onChange={index => {
+            console.log("onChange");
             console.log(index);
-            if (mediaArray[index].mime.includes('video')) {
+            if (mediaArray[index].mime.includes("video")) {
               this.setState({
                 showControls: true,
                 muted: false,
